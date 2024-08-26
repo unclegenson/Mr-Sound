@@ -5,6 +5,8 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:mr_sound_2/constant/constants.dart';
 import 'package:mr_sound_2/screens/play_music_screen.dart';
+import 'package:mr_sound_2/screens/play_music_screen.dart';
+import 'package:shimmer/shimmer.dart';
 
 class Music extends StatelessWidget {
   const Music({super.key});
@@ -180,7 +182,7 @@ class Music extends StatelessWidget {
                       ),
                     ),
                     onTap: () {
-                      Get.to(() => PlayMusic());
+                      Get.to(() => PlayTest());
                     },
                   )
                 ],
