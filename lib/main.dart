@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:mr_sound_2/screens/home_screen.dart';
+import 'package:mr_sound_2/bindings/my_bindings.dart';
+import 'package:mr_sound_2/screens/nav_screen.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
@@ -18,10 +19,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const GetMaterialApp(
+    return GetMaterialApp(
+      initialBinding: MyBindings(),
       debugShowCheckedModeBanner: false,
       title: 'Mr Sound',
-      home: HomeScreen(),
+      home: NavScreen(),
     );
   }
 }
