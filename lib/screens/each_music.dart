@@ -1,9 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:mr_sound_2/constant/constants.dart';
+import 'package:mr_sound_2/controllers/each_music_controller.dart';
 import 'package:mr_sound_2/screens/play_music_screen.dart';
 
 class Music extends StatelessWidget {
@@ -82,14 +85,112 @@ class Music extends StatelessWidget {
                                 fontWeight: FontWeight.w600,
                               ),
                             ),
-                            Text(
-                              'Behnam Bani',
-                              style: TextStyle(
-                                fontSize: 24,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w700,
-                              ),
-                            )
+                            Row(
+                              children: [
+                                Text(
+                                  'Behnam Bani',
+                                  style: TextStyle(
+                                    fontSize: 24,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w700,
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                GestureDetector(
+                                  onTap: () {
+                                    Get.snackbar(
+                                      '',
+                                      '',
+                                      titleText: Row(
+                                        children: [
+                                          Text(
+                                            "Start Download...",
+                                            style: TextStyle(
+                                              color: Colors.white70,
+                                            ),
+                                          ),
+                                          Spacer(),
+                                          GestureDetector(
+                                            onTap: Get.back,
+                                            child: Container(
+                                              decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.circular(10),
+                                                  color:
+                                                      ConstColors.buttonColor),
+                                              child: Padding(
+                                                padding:
+                                                    const EdgeInsets.all(8.0),
+                                                child: Text(
+                                                  'Cancel',
+                                                  style: TextStyle(
+                                                    color: Colors.white70,
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                      shouldIconPulse: false,
+                                      messageText: SizedBox(
+                                        child: Text(
+                                          "Download Started. You'll have this song in just a moment.",
+                                          style: TextStyle(
+                                            color: Colors.white70,
+                                          ),
+                                        ),
+                                      ),
+                                      margin: EdgeInsets.all(10),
+                                      icon: Padding(
+                                        padding: const EdgeInsets.only(left: 4),
+                                        child: Icon(
+                                          Icons.downloading_rounded,
+                                          size: 40,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                      colorText: Colors.white,
+                                      duration: Duration(seconds: 3),
+                                      snackPosition: SnackPosition.BOTTOM,
+                                    );
+                                  },
+                                  child: Icon(
+                                    Icons.file_download_outlined,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Obx(
+                                  () => GestureDetector(
+                                    onTap: () {
+                                      Get.find<EachMusicController>()
+                                              .isLiked
+                                              .value =
+                                          !Get.find<EachMusicController>()
+                                              .isLiked
+                                              .value;
+                                    },
+                                    child: Icon(
+                                      Get.find<EachMusicController>()
+                                              .isLiked
+                                              .value
+                                          ? Icons.favorite
+                                          : Icons.favorite_border,
+                                      color: Get.find<EachMusicController>()
+                                              .isLiked
+                                              .value
+                                          ? Colors.redAccent
+                                          : Colors.white,
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
                           ],
                         )
                       ],
@@ -106,60 +207,92 @@ class Music extends StatelessWidget {
                       SizedBox(
                         height: 10,
                       ),
-                      Row(
-                        children: [
-                          Icon(
-                            Icons.music_note_rounded,
-                            color: Colors.white70,
-                            size: 20,
+                      Container(
+                        width: Get.width / 1.5,
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Colors.white,
+                            width: 1,
                           ),
-                          SizedBox(
-                            width: 4,
-                          ),
-                          Text(
-                            '03:26',
-                            style: TextStyle(
-                              fontSize: 14,
-                              color: Colors.white70,
-                              fontWeight: FontWeight.w700,
+                          borderRadius: BorderRadius.circular(20),
+                          color: Colors.white10,
+                        ),
+                        child: Padding(
+                          padding:
+                              EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                          child: IntrinsicHeight(
+                            child: const Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Column(
+                                  children: [
+                                    Icon(
+                                      Icons.music_note_rounded,
+                                      color: Colors.white,
+                                    ),
+                                    Text(
+                                      '03:26',
+                                      style: TextStyle(
+                                          color: Colors.white, fontSize: 12),
+                                    ),
+                                  ],
+                                ),
+                                VerticalDivider(
+                                  color: Colors.white,
+                                  thickness: 1.5,
+                                ),
+                                Column(
+                                  children: [
+                                    Icon(
+                                      Icons.play_arrow_rounded,
+                                      color: Colors.white,
+                                      size: 25,
+                                    ),
+                                    Text(
+                                      '3.868',
+                                      style: TextStyle(
+                                          color: Colors.white, fontSize: 12),
+                                    )
+                                  ],
+                                ),
+                                VerticalDivider(
+                                  color: Colors.white,
+                                  thickness: 1.5,
+                                ),
+                                Column(
+                                  children: [
+                                    Icon(
+                                      Icons.favorite,
+                                      color: Colors.white,
+                                      size: 25,
+                                    ),
+                                    Text(
+                                      '3.868',
+                                      style: TextStyle(
+                                          color: Colors.white, fontSize: 12),
+                                    )
+                                  ],
+                                ),
+                                VerticalDivider(
+                                  color: Colors.white,
+                                  thickness: 1.5,
+                                ),
+                                Column(
+                                  children: [
+                                    Icon(
+                                      Icons.file_download_outlined,
+                                      color: Colors.white,
+                                      size: 25,
+                                    ),
+                                    Text(
+                                      '3.868',
+                                      style: TextStyle(
+                                          color: Colors.white, fontSize: 12),
+                                    )
+                                  ],
+                                )
+                              ],
                             ),
-                          ),
-                          SizedBox(
-                            width: 4,
-                          ),
-                          Text(
-                            ' unclegenson/Musics/',
-                            style: TextStyle(
-                              fontSize: 12,
-                              color: Colors.white70,
-                              fontWeight: FontWeight.w700,
-                            ),
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 4),
-                        child: SizedBox(
-                          width: Get.width / 4,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Icon(
-                                Icons.favorite_border,
-                                color: Colors.white70,
-                              ),
-                              Icon(
-                                Icons.file_download_outlined,
-                                color: Colors.white70,
-                              ),
-                              Icon(
-                                Icons.more_vert_outlined,
-                                color: Colors.white70,
-                              ),
-                            ],
                           ),
                         ),
                       )
@@ -186,7 +319,7 @@ class Music extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                height: 20,
+                height: 10,
               ),
               Row(
                 children: [
@@ -201,10 +334,10 @@ class Music extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                height: 20,
+                height: 10,
               ),
               SizedBox(
-                height: Get.height / 3.7,
+                height: Get.height / 3.4,
                 width: Get.width,
                 child: ListView.separated(
                   itemBuilder: (context, index) {

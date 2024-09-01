@@ -15,7 +15,7 @@ List<double> samples = [];
 late PageController _pageController;
 List titles = [
   'Play Now',
-  'Save to Library',
+  'Add to Favorites',
   'Play Next',
   'Add to Playlist',
   'Add to queue',
@@ -23,6 +23,17 @@ List titles = [
   'View Artist',
   'Go to Album',
   'Share'
+];
+List icons = [
+  Icons.play_arrow_rounded,
+  Icons.favorite_border,
+  Icons.playlist_play_rounded,
+  Icons.playlist_add_sharp,
+  Icons.queue_music,
+  Icons.file_download_outlined,
+  Icons.person,
+  Icons.album,
+  Icons.share
 ];
 
 class PlayTest extends StatefulWidget {
@@ -151,7 +162,6 @@ class _PlayTestState extends State<PlayTest> {
                   GestureDetector(
                     onTap: () {
                       Get.bottomSheet(
-                        elevation: 150,
                         backgroundColor: Colors.white24,
                         isScrollControlled: true,
                         Stack(
@@ -171,7 +181,7 @@ class _PlayTestState extends State<PlayTest> {
                                         topRight: Radius.circular(20),
                                       ),
                                     ),
-                                    height: Get.height * 5 / 7,
+                                    height: Get.height * 7 / 10,
                                     child: Column(
                                       children: [
                                         Spacer(),
@@ -182,24 +192,35 @@ class _PlayTestState extends State<PlayTest> {
                                           color: Colors.white54,
                                         ),
                                         SizedBox(
-                                          height: 30,
+                                          height: 10,
                                         ),
                                         SizedBox(
-                                          height: Get.height * 3 / 7,
+                                          height: Get.height * 3.1 / 7,
                                           child: ListView.builder(
+                                            physics:
+                                                NeverScrollableScrollPhysics(),
                                             itemCount: 9,
                                             itemBuilder: (context, index) {
-                                              return ListTile(
-                                                dense: true,
-                                                visualDensity:
-                                                    VisualDensity(vertical: -4),
-                                                leading: Icon(Icons.abc),
-                                                title: Text(
-                                                  titles[index],
-                                                  style: TextStyle(
+                                              return Material(
+                                                color:
+                                                    ConstColors.backgroundColor,
+                                                child: ListTile(
+                                                  onTap: () {},
+                                                  dense: true,
+                                                  visualDensity: VisualDensity(
+                                                      vertical: -4),
+                                                  leading: Icon(
+                                                    icons[index],
                                                     color: Colors.white,
-                                                    fontSize: 17,
-                                                    fontWeight: FontWeight.w500,
+                                                  ),
+                                                  title: Text(
+                                                    titles[index],
+                                                    style: TextStyle(
+                                                      color: Colors.white,
+                                                      fontSize: 17,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                    ),
                                                   ),
                                                 ),
                                               );

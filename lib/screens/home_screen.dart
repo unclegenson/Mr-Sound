@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:mr_sound_2/constant/constants.dart';
 import 'package:mr_sound_2/controllers/show_end_widget_controller.dart';
 import 'package:mr_sound_2/screens/SHIMMER_TEST.dart';
+import 'package:mr_sound_2/screens/artist_screen.dart';
+import 'package:mr_sound_2/screens/choose_your_plan.dart';
 import 'package:mr_sound_2/screens/each_music.dart';
 
 final _focusNode = FocusNode();
@@ -138,7 +140,7 @@ class HomeScreen extends StatelessWidget {
                               ),
                             ),
                             onPressed: () {
-                              Get.to(() => ShimmerLoadingScreen());
+                              Get.to(() => Plans());
                             },
                             child: Text(
                               'Try For Free',
@@ -281,28 +283,33 @@ class HomeScreen extends StatelessWidget {
                   child: ListView.separated(
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) {
-                      return Column(
-                        children: [
-                          Container(
-                            width: 130,
-                            height: 130,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: ConstColors.buttonColor,
+                      return GestureDetector(
+                        onTap: () {
+                          Get.to(() => ArtistScreen());
+                        },
+                        child: Column(
+                          children: [
+                            Container(
+                              width: 130,
+                              height: 130,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: ConstColors.buttonColor,
+                              ),
                             ),
-                          ),
-                          SizedBox(
-                            height: 5,
-                          ),
-                          Text(
-                            'Behnam Bani',
-                            style: TextStyle(
-                              fontSize: 17,
-                              color: Colors.white,
-                              fontWeight: FontWeight.w500,
+                            SizedBox(
+                              height: 5,
                             ),
-                          )
-                        ],
+                            Text(
+                              'Behnam Bani',
+                              style: TextStyle(
+                                fontSize: 17,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            )
+                          ],
+                        ),
                       );
                     },
                     separatorBuilder: (context, index) => const SizedBox(

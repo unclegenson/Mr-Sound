@@ -14,6 +14,22 @@ class ChangeProfile extends StatelessWidget {
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(16),
         child: GestureDetector(
+          onTap: () {
+            Get.back();
+            Get.snackbar(
+              'Successfull',
+              'Your Info changed successfully!',
+              margin: EdgeInsets.all(10),
+              icon: Icon(
+                Icons.check,
+                size: 25,
+                color: Colors.green,
+              ),
+              colorText: Colors.green,
+              duration: Duration(seconds: 3),
+              snackPosition: SnackPosition.BOTTOM,
+            );
+          },
           child: Container(
             width: Get.width / 2.3,
             height: 50,
@@ -146,6 +162,8 @@ class ChangeProfile extends StatelessWidget {
                                 decoration: InputDecoration(
                                   hintText: 'Mohammad Mahdi',
                                   border: InputBorder.none,
+                                  hintStyle:
+                                      TextStyle(color: ConstColors.buttonColor),
                                 ),
                               ),
                             ),
@@ -181,7 +199,9 @@ class ChangeProfile extends StatelessWidget {
                               child: TextFormField(
                                 keyboardType: TextInputType.phone,
                                 decoration: InputDecoration(
-                                  hintText: '09100939128',
+                                  hintText: '+98 910 063 9128',
+                                  hintStyle:
+                                      TextStyle(color: ConstColors.buttonColor),
                                   border: InputBorder.none,
                                 ),
                               ),
@@ -220,6 +240,8 @@ class ChangeProfile extends StatelessWidget {
                                 decoration: InputDecoration(
                                   hintText: 'unclegenson@gmail.com',
                                   border: InputBorder.none,
+                                  hintStyle:
+                                      TextStyle(color: ConstColors.buttonColor),
                                 ),
                               ),
                             ),
@@ -263,7 +285,7 @@ class ChangeProfile extends StatelessWidget {
                               hint: Text(
                                 'Select',
                                 style: TextStyle(
-                                  color: ConstColors.backgroundColor,
+                                  color: ConstColors.buttonColor,
                                   fontWeight: FontWeight.w600,
                                 ),
                               ),
@@ -274,7 +296,7 @@ class ChangeProfile extends StatelessWidget {
                                       child: Text(
                                         item,
                                         style: TextStyle(
-                                          color: ConstColors.backgroundColor,
+                                          color: ConstColors.buttonColor,
                                         ),
                                       ),
                                     ),
@@ -295,14 +317,14 @@ class ChangeProfile extends StatelessWidget {
                                   ),
                                   child: Icon(
                                     Icons.keyboard_arrow_down_rounded,
-                                    color: ConstColors.backgroundColor,
+                                    color: ConstColors.buttonColor,
                                   ),
                                 ),
                                 iconSize: 25,
                               ),
                               dropdownStyleData: DropdownStyleData(
                                 decoration: BoxDecoration(
-                                  color: ConstColors.buttonColor,
+                                  color: ConstColors.itemColor,
                                   borderRadius: BorderRadius.circular(20),
                                 ),
                               ),

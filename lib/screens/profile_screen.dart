@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:mr_sound_2/constant/constants.dart';
 import 'package:mr_sound_2/screens/change_profile_screen.dart';
+import 'package:mr_sound_2/screens/help_screen.dart';
 
 List icons = [
   Icons.person,
@@ -45,8 +46,12 @@ class ProfileScreen extends StatelessWidget {
                   'Profile',
                   style: TextStyle(color: Colors.white, fontSize: 20),
                 ),
-                SizedBox(
-                  width: 20,
+                GestureDetector(
+                  onTap: () {
+                    Get.to(() => HelpCenterScreen());
+                  },
+                  child:
+                      Icon(Icons.help_outlined, color: Colors.white, size: 25),
                 )
               ],
             ),
@@ -167,6 +172,8 @@ class ProfileScreen extends StatelessWidget {
                     color: ConstColors.backgroundColor,
                     elevation: 10,
                     child: ListTile(
+                      shape: BeveledRectangleBorder(
+                          borderRadius: BorderRadius.circular(5)),
                       leading: Icon(icons[index], color: Colors.white),
                       onTap: () {
                         Get.to(() => ChangeProfile());

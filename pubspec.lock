@@ -9,6 +9,22 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.11.0"
+  barcode:
+    dependency: transitive
+    description:
+      name: barcode
+      sha256: ab180ce22c6555d77d45f0178a523669db67f95856e3378259ef2ffeb43e6003
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "2.2.8"
+  barcode_widget:
+    dependency: "direct main"
+    description:
+      name: barcode_widget
+      sha256: "6f2c5b08659b1a5f4d88d183e6007133ea2f96e50e7b8bb628f03266c3931427"
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "2.0.4"
   boolean_selector:
     dependency: transitive
     description:
@@ -78,6 +94,14 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.2.1+8"
+  flutter_credit_card:
+    dependency: "direct main"
+    description:
+      name: flutter_credit_card
+      sha256: dffaee369b0e64fb81e63e78d6410762f73b67346692bd2ae7bdcc6d911452e3
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "4.0.1"
   flutter_lints:
     dependency: "direct dev"
     description:
@@ -88,6 +112,11 @@ packages:
     version: "3.0.2"
   flutter_test:
     dependency: "direct dev"
+    description: flutter
+    source: sdk
+    version: "0.0.0"
+  flutter_web_plugins:
+    dependency: transitive
     description: flutter
     source: sdk
     version: "0.0.0"
@@ -163,6 +192,22 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.9.0"
+  plugin_platform_interface:
+    dependency: transitive
+    description:
+      name: plugin_platform_interface
+      sha256: "4820fbfdb9478b1ebae27888254d445073732dae3d6ea81f0b7e06d5dedc3f02"
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "2.1.8"
+  qr:
+    dependency: transitive
+    description:
+      name: qr
+      sha256: "64957a3930367bf97cc211a5af99551d630f2f4625e38af10edd6b19131b64b3"
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "3.0.1"
   shimmer:
     dependency: "direct main"
     description:
