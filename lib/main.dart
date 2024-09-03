@@ -1,8 +1,11 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:mr_sound_2/bindings/my_bindings.dart';
-import 'package:mr_sound_2/screens/nav_screen.dart';
+import 'package:mr_sound_2/screens/splash_screen.dart';
+import 'package:mr_sound_2/screens/splash_start.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
@@ -14,8 +17,24 @@ void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  void initState() {
+    Timer(
+      const Duration(seconds: 3),
+      () {
+        Get.offAll(() => const SplashStartScreen());
+      },
+    );
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +42,14 @@ class MyApp extends StatelessWidget {
       initialBinding: MyBindings(),
       debugShowCheckedModeBanner: false,
       title: 'Mr Sound',
-      home: NavScreen(),
+      home: const SplashScreen(),
     );
   }
 }
+
+//todo: radius all buttons -> 10
+//todo: max heigh each page
+//todo: listviewBuilders horizontal fix
+//todo: decrease app size
+//todo: check transition for bottom nav bar
+

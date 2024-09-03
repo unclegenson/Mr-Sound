@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:mr_sound_2/constant/constants.dart';
 import 'package:barcode_widget/barcode_widget.dart';
 import 'package:mr_sound_2/screens/nav_screen.dart';
@@ -12,41 +11,41 @@ class EReceipt extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: Padding(
-        padding: EdgeInsets.all(12),
+        padding: const EdgeInsets.all(12),
         child: GestureDetector(
           onTap: () async {
             Get.snackbar(
               'Start download',
               'E-Receipt pdf downloading...',
-              margin: EdgeInsets.all(10),
-              icon: Icon(
+              margin: const EdgeInsets.all(10),
+              icon: const Icon(
                 Icons.file_download,
                 size: 25,
                 color: Colors.white,
               ),
               colorText: Colors.white,
-              duration: Duration(seconds: 3),
+              duration: const Duration(seconds: 3),
               snackPosition: SnackPosition.BOTTOM,
             );
             await Future.delayed(
-              Duration(seconds: 3),
+              const Duration(seconds: 3),
               () {
                 Get.snackbar(
                   'download finished',
                   'E-Receipt pdf downloadeded.',
-                  margin: EdgeInsets.all(10),
-                  icon: Icon(
+                  margin: const EdgeInsets.all(10),
+                  icon: const Icon(
                     Icons.download_done_rounded,
                     size: 25,
                     color: Colors.white,
                   ),
                   colorText: Colors.white,
-                  duration: Duration(seconds: 3),
+                  duration: const Duration(seconds: 3),
                   snackPosition: SnackPosition.BOTTOM,
                 );
               },
             );
-            Get.to(() => NavScreen());
+            Get.to(() => const NavScreen());
           },
           child: Container(
             width: Get.width,
@@ -55,7 +54,7 @@ class EReceipt extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
               color: ConstColors.buttonColor,
             ),
-            child: Center(
+            child: const Center(
               child: Text(
                 'Download E-Receipt',
                 style: TextStyle(
@@ -71,7 +70,7 @@ class EReceipt extends StatelessWidget {
       backgroundColor: ConstColors.backgroundColor,
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.all(16),
+          padding: const EdgeInsets.all(16),
           child: SingleChildScrollView(
             child: Column(
               children: [
@@ -80,21 +79,21 @@ class EReceipt extends StatelessWidget {
                   children: [
                     GestureDetector(
                       onTap: Get.back,
-                      child: Icon(
+                      child: const Icon(
                         Icons.arrow_back_ios_rounded,
                         color: Colors.white,
                       ),
                     ),
-                    Text(
+                    const Text(
                       'E-Receipt',
                       style: TextStyle(color: Colors.white, fontSize: 20),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 10,
                     )
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 18,
                 ),
                 Padding(
@@ -109,7 +108,7 @@ class EReceipt extends StatelessWidget {
                           color: Colors.white,
                         ),
                       ),
-                      Row(
+                      const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
@@ -123,13 +122,13 @@ class EReceipt extends StatelessWidget {
                           )
                         ],
                       ),
-                      Divider(
+                      const Divider(
                         height: 60,
                         indent: 20,
                         endIndent: 20,
                         color: Colors.white70,
                       ),
-                      Row(
+                      const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
@@ -143,10 +142,10 @@ class EReceipt extends StatelessWidget {
                           )
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
-                      Row(
+                      const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
@@ -160,13 +159,13 @@ class EReceipt extends StatelessWidget {
                           )
                         ],
                       ),
-                      Divider(
+                      const Divider(
                         height: 60,
                         indent: 20,
                         endIndent: 20,
                         color: Colors.white70,
                       ),
-                      Row(
+                      const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
@@ -180,10 +179,10 @@ class EReceipt extends StatelessWidget {
                           )
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
-                      Row(
+                      const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
@@ -197,13 +196,13 @@ class EReceipt extends StatelessWidget {
                           )
                         ],
                       ),
-                      Divider(
+                      const Divider(
                         height: 60,
                         indent: 20,
                         endIndent: 20,
                         color: Colors.white70,
                       ),
-                      Row(
+                      const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
@@ -217,13 +216,13 @@ class EReceipt extends StatelessWidget {
                           )
                         ],
                       ),
-                      Divider(
+                      const Divider(
                         height: 60,
                         indent: 20,
                         endIndent: 20,
                         color: Colors.white70,
                       ),
-                      Row(
+                      const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
@@ -237,10 +236,10 @@ class EReceipt extends StatelessWidget {
                           )
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
-                      Row(
+                      const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
@@ -254,10 +253,10 @@ class EReceipt extends StatelessWidget {
                           )
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
-                      Row(
+                      const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
@@ -271,10 +270,10 @@ class EReceipt extends StatelessWidget {
                           )
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
-                      Row(
+                      const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(

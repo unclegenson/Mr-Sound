@@ -14,7 +14,7 @@ class Explore extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Padding(
-        padding: EdgeInsets.all(12),
+        padding: const EdgeInsets.fromLTRB(16, 16, 0, 0),
         child: Obx(
           () => SingleChildScrollView(
             child: Column(
@@ -24,46 +24,49 @@ class Explore extends StatelessWidget {
                   children: [
                     GestureDetector(
                       onTap: Get.back,
-                      child: Icon(
+                      child: const Icon(
                         Icons.arrow_back_ios_rounded,
                         color: Colors.white,
                       ),
                     ),
-                    Text(
+                    const Text(
                       'Explore',
                       style: TextStyle(color: Colors.white, fontSize: 20),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
-                Container(
-                  decoration: BoxDecoration(
-                    color: ConstColors.itemColor,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  width: Get.width,
-                  height: 60,
-                  child: TextFormField(
-                    style: TextStyle(color: Colors.white),
-                    decoration: InputDecoration(
-                      border: InputBorder.none,
-                      prefixIcon: Icon(
-                        Icons.search,
-                        color: Colors.white,
-                      ),
-                      label: Text('Search Here...'),
-                      labelStyle: TextStyle(
-                        color: Colors.white,
+                Padding(
+                  padding: const EdgeInsets.only(right: 16),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: ConstColors.itemColor,
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    width: Get.width,
+                    height: 60,
+                    child: TextFormField(
+                      style: const TextStyle(color: Colors.white),
+                      decoration: const InputDecoration(
+                        border: InputBorder.none,
+                        prefixIcon: Icon(
+                          Icons.search,
+                          color: Colors.white,
+                        ),
+                        label: Text('Search Here...'),
+                        labelStyle: TextStyle(
+                          color: Colors.white,
+                        ),
                       ),
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 15,
                 ),
                 SizedBox(
@@ -111,7 +114,7 @@ class Explore extends StatelessWidget {
                       );
                     },
                     separatorBuilder: (context, index) {
-                      return SizedBox(
+                      return const SizedBox(
                         width: 8,
                       );
                     },
@@ -144,7 +147,7 @@ class Explore extends StatelessWidget {
                             )
                           ],
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 5,
                         ),
                         SizedBox(
@@ -163,10 +166,10 @@ class Explore extends StatelessWidget {
                                       color: ConstColors.buttonColor,
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 5,
                                   ),
-                                  Text(
+                                  const Text(
                                     'Behnam Bani',
                                     style: TextStyle(
                                       fontSize: 17,
@@ -184,7 +187,7 @@ class Explore extends StatelessWidget {
                             itemCount: 10,
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 5,
                         ),
                         Row(
@@ -209,95 +212,99 @@ class Explore extends StatelessWidget {
                             )
                           ],
                         ),
-                        SizedBox(
-                          height: Get.height / 3 - 8,
-                          child: ListView.separated(
-                            itemBuilder: (context, index) {
-                              return Container(
-                                height: 80,
-                                width: Get.width,
-                                decoration: BoxDecoration(
-                                  color: ConstColors.backgroundColor,
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                child: Row(
-                                  children: [
-                                    Container(
-                                      height: Get.height / 5,
-                                      width: Get.width / 5,
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(10),
-                                        color: ConstColors.buttonColor,
-                                      ),
-                                    ),
-                                    const SizedBox(
-                                      width: 10,
-                                    ),
-                                    const Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      children: [
-                                        Text(
-                                          'Hate Monday',
-                                          style: TextStyle(
-                                            fontSize: 18,
-                                            fontWeight: FontWeight.w600,
-                                            color: Colors.white,
-                                          ),
+                        Padding(
+                          padding: const EdgeInsets.only(right: 16),
+                          child: SizedBox(
+                            height: Get.height / 3 - 8,
+                            child: ListView.separated(
+                              itemBuilder: (context, index) {
+                                return Container(
+                                  height: 80,
+                                  width: Get.width,
+                                  decoration: BoxDecoration(
+                                    color: ConstColors.backgroundColor,
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  child: Row(
+                                    children: [
+                                      Container(
+                                        height: Get.height / 5,
+                                        width: Get.width / 5,
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                          color: ConstColors.buttonColor,
                                         ),
-                                        Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Text(
-                                              'Behnam Bani',
-                                              style: TextStyle(
-                                                fontSize: 13,
-                                                fontWeight: FontWeight.w400,
-                                                color: Colors.white70,
-                                              ),
+                                      ),
+                                      const SizedBox(
+                                        width: 10,
+                                      ),
+                                      const Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceEvenly,
+                                        children: [
+                                          Text(
+                                            'Hate Monday',
+                                            style: TextStyle(
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.w600,
+                                              color: Colors.white,
                                             ),
-                                            Text(
-                                              '04:29',
-                                              style: TextStyle(
-                                                fontSize: 13,
-                                                fontWeight: FontWeight.w400,
-                                                color: Colors.white70,
+                                          ),
+                                          Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                'Behnam Bani',
+                                                style: TextStyle(
+                                                  fontSize: 13,
+                                                  fontWeight: FontWeight.w400,
+                                                  color: Colors.white70,
+                                                ),
                                               ),
-                                            ),
-                                          ],
-                                        )
-                                      ],
-                                    ),
-                                    const Spacer(),
-                                    const Icon(
-                                      Icons.playlist_add,
-                                      color: Colors.white70,
-                                      size: 25,
-                                    ),
-                                    SizedBox(width: 8),
-                                    const Icon(
-                                      Icons.file_download_outlined,
-                                      color: Colors.white70,
-                                      size: 25,
-                                    ),
-                                    SizedBox(width: 8),
-                                    const Icon(
-                                      Icons.more_vert_outlined,
-                                      color: Colors.white70,
-                                      size: 25,
-                                    ),
-                                  ],
-                                ),
-                              );
-                            },
-                            separatorBuilder: (context, index) =>
-                                const SizedBox(
-                              height: 14,
+                                              Text(
+                                                '04:29',
+                                                style: TextStyle(
+                                                  fontSize: 13,
+                                                  fontWeight: FontWeight.w400,
+                                                  color: Colors.white70,
+                                                ),
+                                              ),
+                                            ],
+                                          )
+                                        ],
+                                      ),
+                                      const Spacer(),
+                                      const Icon(
+                                        Icons.playlist_add,
+                                        color: Colors.white70,
+                                        size: 25,
+                                      ),
+                                      const SizedBox(width: 8),
+                                      const Icon(
+                                        Icons.file_download_outlined,
+                                        color: Colors.white70,
+                                        size: 25,
+                                      ),
+                                      const SizedBox(width: 8),
+                                      const Icon(
+                                        Icons.more_vert_outlined,
+                                        color: Colors.white70,
+                                        size: 25,
+                                      ),
+                                    ],
+                                  ),
+                                );
+                              },
+                              separatorBuilder: (context, index) =>
+                                  const SizedBox(
+                                height: 14,
+                              ),
+                              itemCount: 10,
                             ),
-                            itemCount: 10,
                           ),
                         ),
                       ],
@@ -306,7 +313,7 @@ class Explore extends StatelessWidget {
                 else if (Get.find<BubbleController>().bubbleIndex.value == 1)
                   Column(
                     children: [
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       SizedBox(
@@ -377,13 +384,13 @@ class Explore extends StatelessWidget {
                                     color: Colors.white70,
                                     size: 25,
                                   ),
-                                  SizedBox(width: 8),
+                                  const SizedBox(width: 8),
                                   const Icon(
                                     Icons.file_download_outlined,
                                     color: Colors.white70,
                                     size: 25,
                                   ),
-                                  SizedBox(width: 8),
+                                  const SizedBox(width: 8),
                                   const Icon(
                                     Icons.more_vert_outlined,
                                     color: Colors.white70,
@@ -404,14 +411,14 @@ class Explore extends StatelessWidget {
                 if (Get.find<BubbleController>().bubbleIndex.value == 2)
                   Column(
                     children: [
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       SizedBox(
                         height: Get.height - 300,
                         child: GridView.builder(
                           gridDelegate:
-                              SliverGridDelegateWithFixedCrossAxisCount(
+                              const SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 3,
                             mainAxisSpacing: 100,
                             crossAxisSpacing: 0,
@@ -428,10 +435,10 @@ class Explore extends StatelessWidget {
                                       shape: BoxShape.circle,
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 10,
                                   ),
-                                  Text(
+                                  const Text(
                                     'Taylor Swift',
                                     style: TextStyle(
                                       fontSize: 15,
@@ -451,14 +458,14 @@ class Explore extends StatelessWidget {
                 else if (Get.find<BubbleController>().bubbleIndex.value == 3)
                   Column(
                     children: [
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       SizedBox(
                         height: Get.height - 300,
                         child: GridView.builder(
                           gridDelegate:
-                              SliverGridDelegateWithFixedCrossAxisCount(
+                              const SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 2,
                             mainAxisSpacing: 70,
                             crossAxisSpacing: 5,
@@ -482,7 +489,7 @@ class Explore extends StatelessWidget {
                                     ),
                                   ),
                                 ),
-                                Row(
+                                const Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: [
@@ -495,7 +502,7 @@ class Explore extends StatelessWidget {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsets.symmetric(
+                                      padding: EdgeInsets.symmetric(
                                           horizontal: 10, vertical: 4),
                                       child: Icon(
                                         Icons.more_vert_outlined,
@@ -504,7 +511,7 @@ class Explore extends StatelessWidget {
                                     )
                                   ],
                                 ),
-                                Text(
+                                const Text(
                                   'Behnam Bani',
                                   style: TextStyle(
                                     fontSize: 14,
@@ -512,7 +519,7 @@ class Explore extends StatelessWidget {
                                     fontWeight: FontWeight.w400,
                                   ),
                                 ),
-                                Text(
+                                const Text(
                                   '25 Songs',
                                   style: TextStyle(
                                     fontSize: 13,
@@ -530,7 +537,7 @@ class Explore extends StatelessWidget {
                 else if (Get.find<BubbleController>().bubbleIndex.value == 4)
                   Column(
                     children: [
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       SizedBox(
@@ -601,13 +608,13 @@ class Explore extends StatelessWidget {
                                     color: Colors.white70,
                                     size: 25,
                                   ),
-                                  SizedBox(width: 8),
+                                  const SizedBox(width: 8),
                                   const Icon(
                                     Icons.file_download_outlined,
                                     color: Colors.white70,
                                     size: 25,
                                   ),
-                                  SizedBox(width: 8),
+                                  const SizedBox(width: 8),
                                   const Icon(
                                     Icons.more_vert_outlined,
                                     color: Colors.white70,

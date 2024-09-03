@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:mr_sound_2/constant/constants.dart';
 import 'package:mr_sound_2/screens/e_receipt_screen.dart';
 import 'package:mr_sound_2/screens/nav_screen.dart';
@@ -21,7 +20,7 @@ class SuccessPay extends StatelessWidget {
               padding: const EdgeInsets.all(12.0),
               child: GestureDetector(
                 onTap: () {
-                  Get.offAll(() => EReceipt());
+                  Get.offAll(() => const EReceipt());
                 },
                 child: Container(
                   width: Get.width,
@@ -30,7 +29,7 @@ class SuccessPay extends StatelessWidget {
                     borderRadius: BorderRadius.circular(15),
                     color: ConstColors.buttonColor,
                   ),
-                  child: Center(
+                  child: const Center(
                     child: Text(
                       'View E-Receipt',
                       style: TextStyle(
@@ -47,7 +46,7 @@ class SuccessPay extends StatelessWidget {
               padding: const EdgeInsets.only(bottom: 12, left: 12, right: 12),
               child: GestureDetector(
                 onTap: () {
-                  Get.offAll(() => NavScreen());
+                  Get.offAll(() => const NavScreen());
                 },
                 child: Container(
                   width: Get.width,
@@ -56,7 +55,7 @@ class SuccessPay extends StatelessWidget {
                     borderRadius: BorderRadius.circular(15),
                     color: ConstColors.backgroundColor,
                   ),
-                  child: Center(
+                  child: const Center(
                     child: Text(
                       'Go to Home',
                       style: TextStyle(
@@ -74,7 +73,7 @@ class SuccessPay extends StatelessWidget {
       ),
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.all(16),
+          padding: const EdgeInsets.all(16),
           child: SingleChildScrollView(
             child: Column(
               children: [
@@ -83,7 +82,7 @@ class SuccessPay extends StatelessWidget {
                   children: [
                     GestureDetector(
                       onTap: Get.back,
-                      child: Icon(
+                      child: const Icon(
                         Icons.arrow_back_ios_rounded,
                         color: Colors.white,
                       ),
@@ -93,7 +92,7 @@ class SuccessPay extends StatelessWidget {
                 SizedBox(
                   height: Get.width / 2,
                 ),
-                Center(
+                const Center(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

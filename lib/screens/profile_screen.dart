@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:mr_sound_2/constant/constants.dart';
 import 'package:mr_sound_2/screens/change_profile_screen.dart';
@@ -8,17 +7,17 @@ import 'package:mr_sound_2/screens/help_screen.dart';
 List icons = [
   Icons.person,
   Icons.music_note,
-  Icons.mic_none_rounded,
-  Icons.album,
+  Icons.notifications,
+  Icons.group_rounded,
   Icons.access_time_filled,
   Icons.settings,
 ];
 List titles = [
   'Your Profile',
   'Favorite Songs',
-  'Artists',
-  'Albums',
-  'History',
+  'Notifications',
+  'Following',
+  'Activity',
   'Settings'
 ];
 
@@ -29,7 +28,7 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Padding(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
         child: Column(
           children: [
             Row(
@@ -37,32 +36,32 @@ class ProfileScreen extends StatelessWidget {
               children: [
                 GestureDetector(
                   onTap: Get.back,
-                  child: Icon(
+                  child: const Icon(
                     Icons.arrow_back_ios_rounded,
                     color: Colors.white,
                   ),
                 ),
-                Text(
+                const Text(
                   'Profile',
                   style: TextStyle(color: Colors.white, fontSize: 20),
                 ),
                 GestureDetector(
                   onTap: () {
-                    Get.to(() => HelpCenterScreen());
+                    Get.to(() => const HelpCenterScreen());
                   },
-                  child:
-                      Icon(Icons.help_outlined, color: Colors.white, size: 25),
+                  child: const Icon(Icons.help_outlined,
+                      color: Colors.white, size: 25),
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 18,
             ),
             Stack(
               alignment: Alignment.bottomRight,
               children: [
                 Container(
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     shape: BoxShape.circle,
                     color: Colors.grey,
                   ),
@@ -81,16 +80,16 @@ class ProfileScreen extends StatelessWidget {
                       size: 20,
                     ),
                     onPressed: () {
-                      Get.to(() => ChangeProfile());
+                      Get.to(() => const ChangeProfile());
                     },
                   ),
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            Text(
+            const Text(
               'Mohammad Mahdi',
               style: TextStyle(
                 color: Colors.white,
@@ -98,7 +97,7 @@ class ProfileScreen extends StatelessWidget {
                 fontWeight: FontWeight.w500,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Container(
@@ -113,19 +112,19 @@ class ProfileScreen extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.all(12.0),
                     child: Container(
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         shape: BoxShape.circle,
                         color: Colors.white70,
                       ),
                       width: 50,
                       height: 50,
-                      child: Icon(
+                      child: const Icon(
                         Icons.workspace_premium,
                         color: Colors.black,
                       ),
                     ),
                   ),
-                  Column(
+                  const Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -147,26 +146,26 @@ class ProfileScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  Spacer(),
+                  const Spacer(),
                   IconButton(
                     onPressed: () {},
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.arrow_forward_ios_rounded,
                       color: Colors.white,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 6,
                   ),
                 ],
               ),
             ),
-            Spacer(),
+            const Spacer(),
             SizedBox(
               height: Get.height / 2.1,
               width: Get.width,
               child: ListView.builder(
-                physics: NeverScrollableScrollPhysics(),
+                physics: const NeverScrollableScrollPhysics(),
                 itemBuilder: (context, index) {
                   return Card(
                     color: ConstColors.backgroundColor,
@@ -176,16 +175,17 @@ class ProfileScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(5)),
                       leading: Icon(icons[index], color: Colors.white),
                       onTap: () {
-                        Get.to(() => ChangeProfile());
+                        Get.to(() => const ChangeProfile());
                       },
                       title: Text(
                         titles[index],
-                        style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.white),
+                        style: const TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.white,
+                        ),
                       ),
-                      trailing: Icon(
+                      trailing: const Icon(
                         Icons.keyboard_arrow_right_rounded,
                         size: 30,
                         color: Colors.white,
@@ -195,7 +195,8 @@ class ProfileScreen extends StatelessWidget {
                 },
                 itemCount: 6,
               ),
-            )
+            ),
+            const Spacer(),
           ],
         ),
       ),

@@ -7,6 +7,7 @@ import 'package:mr_sound_2/controllers/music_player_page.dart';
 import 'package:mr_sound_2/controllers/nav_controller.dart';
 import 'package:mr_sound_2/controllers/playlist_controller.dart';
 import 'package:mr_sound_2/controllers/show_end_widget_controller.dart';
+import 'package:mr_sound_2/controllers/splash_controller.dart';
 
 class MyBindings extends Bindings {
   @override
@@ -19,5 +20,6 @@ class MyBindings extends Bindings {
     Get.put(EachMusicController());
     Get.put(HelpBubbleController());
     Get.put(ExpandContainerController());
+    Get.lazyPut(() => SplashController());
   }
 }

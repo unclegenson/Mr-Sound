@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_credit_card/flutter_credit_card.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:mr_sound_2/constant/constants.dart';
 import 'package:mr_sound_2/screens/success_pay_screen.dart';
 
@@ -45,8 +43,8 @@ class MySampleState extends State<MySample> {
             ),
             decoration: BoxDecoration(
               color: ConstColors.buttonColor,
-              borderRadius: BorderRadius.all(
-                Radius.circular(8),
+              borderRadius: const BorderRadius.all(
+                Radius.circular(10),
               ),
             ),
             padding: const EdgeInsets.symmetric(vertical: 15),
@@ -66,7 +64,7 @@ class MySampleState extends State<MySample> {
       resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.all(16),
+          padding: const EdgeInsets.all(16),
           child: SingleChildScrollView(
             child: SizedBox(
               width: Get.width,
@@ -79,21 +77,21 @@ class MySampleState extends State<MySample> {
                     children: [
                       GestureDetector(
                         onTap: Get.back,
-                        child: Icon(
+                        child: const Icon(
                           Icons.arrow_back_ios_rounded,
                           color: Colors.white,
                         ),
                       ),
-                      Text(
+                      const Text(
                         'Add Card',
                         style: TextStyle(color: Colors.white, fontSize: 20),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 20,
                       ),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 18,
                   ),
                   CreditCardWidget(
@@ -130,17 +128,19 @@ class MySampleState extends State<MySample> {
                             cardHolderName: cardHolderName,
                             expiryDate: expiryDate,
                             inputConfiguration: InputConfiguration(
-                              cvvCodeTextStyle: TextStyle(color: Colors.white),
+                              cvvCodeTextStyle:
+                                  const TextStyle(color: Colors.white),
                               cardHolderTextStyle:
-                                  TextStyle(color: Colors.white),
+                                  const TextStyle(color: Colors.white),
                               cardNumberTextStyle:
-                                  TextStyle(color: Colors.white),
+                                  const TextStyle(color: Colors.white),
                               expiryDateTextStyle:
-                                  TextStyle(color: Colors.white),
+                                  const TextStyle(color: Colors.white),
                               cardNumberDecoration: InputDecoration(
                                 labelText: 'Number',
-                                hintStyle: TextStyle(color: Colors.white),
-                                labelStyle: TextStyle(color: Colors.white),
+                                hintStyle: const TextStyle(color: Colors.white),
+                                labelStyle:
+                                    const TextStyle(color: Colors.white),
                                 hintText: 'XXXX XXXX XXXX XXXX',
                                 focusedBorder: UnderlineInputBorder(
                                   borderSide: BorderSide(
@@ -154,8 +154,9 @@ class MySampleState extends State<MySample> {
                                       color: ConstColors.buttonColor),
                                 ),
                                 hintText: 'XX/XX',
-                                hintStyle: TextStyle(color: Colors.white),
-                                labelStyle: TextStyle(color: Colors.white),
+                                hintStyle: const TextStyle(color: Colors.white),
+                                labelStyle:
+                                    const TextStyle(color: Colors.white),
                               ),
                               cvvCodeDecoration: InputDecoration(
                                 labelText: 'CVV',
@@ -164,8 +165,9 @@ class MySampleState extends State<MySample> {
                                   borderSide: BorderSide(
                                       color: ConstColors.buttonColor),
                                 ),
-                                hintStyle: TextStyle(color: Colors.white),
-                                labelStyle: TextStyle(color: Colors.white),
+                                hintStyle: const TextStyle(color: Colors.white),
+                                labelStyle:
+                                    const TextStyle(color: Colors.white),
                               ),
                               cardHolderDecoration: InputDecoration(
                                 labelText: 'Card Holder',
@@ -173,8 +175,9 @@ class MySampleState extends State<MySample> {
                                   borderSide: BorderSide(
                                       color: ConstColors.buttonColor),
                                 ),
-                                hintStyle: TextStyle(color: Colors.white),
-                                labelStyle: TextStyle(color: Colors.white),
+                                hintStyle: const TextStyle(color: Colors.white),
+                                labelStyle:
+                                    const TextStyle(color: Colors.white),
                               ),
                             ),
                             onCreditCardModelChange: onCreditCardModelChange,
@@ -194,7 +197,7 @@ class MySampleState extends State<MySample> {
 
   void _onValidate() {
     if (formKey.currentState?.validate() ?? false) {
-      Get.to(() => SuccessPay());
+      Get.to(() => const SuccessPay());
     } else {
       print('invalid!');
     }

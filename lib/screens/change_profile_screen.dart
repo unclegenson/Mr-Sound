@@ -19,14 +19,14 @@ class ChangeProfile extends StatelessWidget {
             Get.snackbar(
               'Successfull',
               'Your Info changed successfully!',
-              margin: EdgeInsets.all(10),
-              icon: Icon(
+              margin: const EdgeInsets.all(10),
+              icon: const Icon(
                 Icons.check,
                 size: 25,
                 color: Colors.green,
               ),
               colorText: Colors.green,
-              duration: Duration(seconds: 3),
+              duration: const Duration(seconds: 3),
               snackPosition: SnackPosition.BOTTOM,
             );
           },
@@ -37,7 +37,7 @@ class ChangeProfile extends StatelessWidget {
               borderRadius: BorderRadius.circular(30),
               color: ConstColors.buttonColor,
             ),
-            child: Center(
+            child: const Center(
               child: Text(
                 'Create',
                 style: TextStyle(
@@ -53,7 +53,7 @@ class ChangeProfile extends StatelessWidget {
       backgroundColor: ConstColors.backgroundColor,
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.all(16),
+          padding: const EdgeInsets.all(16),
           child: SingleChildScrollView(
             child: Column(
               children: [
@@ -62,28 +62,28 @@ class ChangeProfile extends StatelessWidget {
                   children: [
                     GestureDetector(
                       onTap: Get.back,
-                      child: Icon(
+                      child: const Icon(
                         Icons.arrow_back_ios_rounded,
                         color: Colors.white,
                       ),
                     ),
-                    Text(
+                    const Text(
                       'Change Profile',
                       style: TextStyle(color: Colors.white, fontSize: 20),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     )
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 18,
                 ),
                 Stack(
                   alignment: Alignment.bottomRight,
                   children: [
                     Container(
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         shape: BoxShape.circle,
                         color: Colors.grey,
                       ),
@@ -107,14 +107,14 @@ class ChangeProfile extends StatelessWidget {
                     )
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Container(
                   width: Get.width,
                   height: Get.height / 2,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.only(
+                    borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(20),
                       topRight: Radius.circular(20),
                     ),
@@ -130,7 +130,7 @@ class ChangeProfile extends StatelessWidget {
                             endIndent: Get.width / 3,
                             color: ConstColors.buttonColor.withAlpha(100),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 4,
                           ),
                           Row(
@@ -145,7 +145,7 @@ class ChangeProfile extends StatelessWidget {
                               ),
                             ],
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 4,
                           ),
                           Container(
@@ -168,7 +168,7 @@ class ChangeProfile extends StatelessWidget {
                               ),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 10,
                           ),
                           Row(
@@ -183,7 +183,7 @@ class ChangeProfile extends StatelessWidget {
                               ),
                             ],
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 4,
                           ),
                           Container(
@@ -207,7 +207,7 @@ class ChangeProfile extends StatelessWidget {
                               ),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 10,
                           ),
                           Row(
@@ -222,7 +222,7 @@ class ChangeProfile extends StatelessWidget {
                               ),
                             ],
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 4,
                           ),
                           Container(
@@ -246,7 +246,7 @@ class ChangeProfile extends StatelessWidget {
                               ),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 10,
                           ),
                           Row(
@@ -261,7 +261,7 @@ class ChangeProfile extends StatelessWidget {
                               ),
                             ],
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 4,
                           ),
                           Container(
@@ -276,10 +276,10 @@ class ChangeProfile extends StatelessWidget {
                                   color: Colors.white,
                                   fontWeight: FontWeight.w500),
                               isExpanded: true,
-                              decoration: InputDecoration(
+                              decoration: const InputDecoration(
                                 iconColor: Colors.white,
                                 contentPadding:
-                                    const EdgeInsets.symmetric(vertical: 16),
+                                    EdgeInsets.symmetric(vertical: 16),
                                 border: InputBorder.none,
                               ),
                               hint: Text(
@@ -311,14 +311,9 @@ class ChangeProfile extends StatelessWidget {
                                 padding: EdgeInsets.only(right: 4, left: 4),
                               ),
                               iconStyleData: IconStyleData(
-                                icon: Padding(
-                                  padding: EdgeInsets.only(
-                                    right: 10,
-                                  ),
-                                  child: Icon(
-                                    Icons.keyboard_arrow_down_rounded,
-                                    color: ConstColors.buttonColor,
-                                  ),
+                                icon: Icon(
+                                  Icons.keyboard_arrow_down_rounded,
+                                  color: ConstColors.buttonColor,
                                 ),
                                 iconSize: 25,
                               ),
@@ -338,7 +333,7 @@ class ChangeProfile extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
               ],

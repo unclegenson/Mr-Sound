@@ -27,7 +27,7 @@ class Plans extends StatelessWidget {
       backgroundColor: ConstColors.backgroundColor,
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.all(16),
+          padding: const EdgeInsets.all(16),
           child: SingleChildScrollView(
             child: Column(
               children: [
@@ -36,21 +36,21 @@ class Plans extends StatelessWidget {
                   children: [
                     GestureDetector(
                       onTap: Get.back,
-                      child: Icon(
+                      child: const Icon(
                         Icons.arrow_back_ios_rounded,
                         color: Colors.white,
                       ),
                     ),
-                    Text(
+                    const Text(
                       'Choose your plan',
                       style: TextStyle(color: Colors.white, fontSize: 20),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 18,
                 ),
                 Container(
@@ -67,12 +67,12 @@ class Plans extends StatelessWidget {
                         height: 80,
                         decoration: BoxDecoration(
                           color: ConstColors.buttonColor,
-                          borderRadius: BorderRadius.only(
+                          borderRadius: const BorderRadius.only(
                             topLeft: Radius.circular(15),
                             topRight: Radius.circular(15),
                           ),
                         ),
-                        child: Column(
+                        child: const Column(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             SizedBox(
@@ -105,20 +105,20 @@ class Plans extends StatelessWidget {
                         child: SizedBox(
                           height: Get.height / 3 - 120,
                           child: ListView.builder(
-                            physics: NeverScrollableScrollPhysics(),
+                            physics: const NeverScrollableScrollPhysics(),
                             itemCount: 4,
                             itemBuilder: (context, index) {
                               return ListTile(
                                 dense: true,
-                                visualDensity:
-                                    VisualDensity(horizontal: -4, vertical: -4),
-                                leading: Icon(
+                                visualDensity: const VisualDensity(
+                                    horizontal: -4, vertical: -4),
+                                leading: const Icon(
                                   Icons.check_circle_outline_outlined,
                                   color: Colors.white,
                                 ),
                                 title: Text(
                                   freeTexts[index],
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     color: Colors.white,
                                     fontSize: 17,
                                     fontWeight: FontWeight.w500,
@@ -132,7 +132,7 @@ class Plans extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 Container(
@@ -149,12 +149,12 @@ class Plans extends StatelessWidget {
                         height: 80,
                         decoration: BoxDecoration(
                           color: ConstColors.buttonColor,
-                          borderRadius: BorderRadius.only(
+                          borderRadius: const BorderRadius.only(
                             topLeft: Radius.circular(15),
                             topRight: Radius.circular(15),
                           ),
                         ),
-                        child: Column(
+                        child: const Column(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             SizedBox(
@@ -203,20 +203,20 @@ class Plans extends StatelessWidget {
                         child: SizedBox(
                           height: Get.height / 3 - 120,
                           child: ListView.builder(
-                            physics: NeverScrollableScrollPhysics(),
+                            physics: const NeverScrollableScrollPhysics(),
                             itemCount: 4,
                             itemBuilder: (context, index) {
                               return ListTile(
                                 dense: true,
-                                visualDensity:
-                                    VisualDensity(horizontal: -4, vertical: -4),
-                                leading: Icon(
+                                visualDensity: const VisualDensity(
+                                    horizontal: -4, vertical: -4),
+                                leading: const Icon(
                                   Icons.check_circle_outline_outlined,
                                   color: Colors.white,
                                 ),
                                 title: Text(
                                   premiumTexts[index],
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     color: Colors.white,
                                     fontSize: 17,
                                     fontWeight: FontWeight.w500,
@@ -228,10 +228,10 @@ class Plans extends StatelessWidget {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsets.all(13),
+                        padding: const EdgeInsets.all(13),
                         child: GestureDetector(
                           onTap: () {
-                            Get.to(() => MySample());
+                            Get.to(() => const MySample());
                           },
                           child: Container(
                             width: Get.width,
@@ -239,7 +239,7 @@ class Plans extends StatelessWidget {
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(15),
                                 color: ConstColors.buttonColor),
-                            child: Center(
+                            child: const Center(
                               child: Text(
                                 'Select Plan',
                                 style: TextStyle(
@@ -255,7 +255,7 @@ class Plans extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 Container(
@@ -272,12 +272,12 @@ class Plans extends StatelessWidget {
                         height: 80,
                         decoration: BoxDecoration(
                           color: ConstColors.buttonColor,
-                          borderRadius: BorderRadius.only(
+                          borderRadius: const BorderRadius.only(
                             topLeft: Radius.circular(15),
                             topRight: Radius.circular(15),
                           ),
                         ),
-                        child: Column(
+                        child: const Column(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             SizedBox(
@@ -326,20 +326,20 @@ class Plans extends StatelessWidget {
                         child: SizedBox(
                           height: Get.height / 3 - 120,
                           child: ListView.builder(
-                            physics: NeverScrollableScrollPhysics(),
+                            physics: const NeverScrollableScrollPhysics(),
                             itemCount: 4,
                             itemBuilder: (context, index) {
                               return ListTile(
                                 dense: true,
-                                visualDensity:
-                                    VisualDensity(horizontal: -4, vertical: -4),
-                                leading: Icon(
+                                visualDensity: const VisualDensity(
+                                    horizontal: -4, vertical: -4),
+                                leading: const Icon(
                                   Icons.check_circle_outline_outlined,
                                   color: Colors.white,
                                 ),
                                 title: Text(
                                   premiumTexts[index],
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     color: Colors.white,
                                     fontSize: 17,
                                     fontWeight: FontWeight.w500,
@@ -354,7 +354,7 @@ class Plans extends StatelessWidget {
                         padding: const EdgeInsets.all(13),
                         child: GestureDetector(
                           onTap: () {
-                            Get.to(() => MySample());
+                            Get.to(() => const MySample());
                           },
                           child: Container(
                             width: Get.width,
@@ -362,7 +362,7 @@ class Plans extends StatelessWidget {
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(15),
                                 color: ConstColors.buttonColor),
-                            child: Center(
+                            child: const Center(
                               child: Text(
                                 'Select Plan',
                                 style: TextStyle(
@@ -378,14 +378,14 @@ class Plans extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 TextButton(
                   onPressed: () {
-                    Get.offAll(() => NavScreen());
+                    Get.offAll(() => const NavScreen());
                   },
-                  child: Text(
+                  child: const Text(
                     'or choose free plan',
                     style: TextStyle(
                       color: Colors.white,

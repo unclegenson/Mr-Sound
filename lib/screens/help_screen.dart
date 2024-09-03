@@ -32,7 +32,7 @@ class HelpCenterScreen extends StatelessWidget {
         backgroundColor: ConstColors.backgroundColor,
         body: SafeArea(
           child: Padding(
-            padding: EdgeInsets.all(16),
+            padding: const EdgeInsets.all(16),
             child: SingleChildScrollView(
               child: Column(
                 children: [
@@ -41,24 +41,24 @@ class HelpCenterScreen extends StatelessWidget {
                     children: [
                       GestureDetector(
                         onTap: Get.back,
-                        child: Icon(
+                        child: const Icon(
                           Icons.arrow_back_ios_rounded,
                           color: Colors.white,
                         ),
                       ),
-                      Text(
+                      const Text(
                         'Help Center',
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 20,
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 30,
                       )
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 18,
                   ),
                   Container(
@@ -69,8 +69,8 @@ class HelpCenterScreen extends StatelessWidget {
                     width: Get.width,
                     height: 60,
                     child: TextFormField(
-                      style: TextStyle(color: Colors.white),
-                      decoration: InputDecoration(
+                      style: const TextStyle(color: Colors.white),
+                      decoration: const InputDecoration(
                         border: InputBorder.none,
                         prefixIcon: Icon(
                           Icons.search,
@@ -83,7 +83,7 @@ class HelpCenterScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 5,
                   ),
                   SizedBox(
@@ -111,14 +111,14 @@ class HelpCenterScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
                   SizedBox(
                     width: Get.width,
                     height: Get.height * 7 / 10,
                     child: TabBarView(
-                      physics: NeverScrollableScrollPhysics(),
+                      physics: const NeverScrollableScrollPhysics(),
                       children: [
                         Column(
                           children: [
@@ -171,14 +171,14 @@ class HelpCenterScreen extends StatelessWidget {
                                   );
                                 },
                                 separatorBuilder: (context, index) {
-                                  return SizedBox(
+                                  return const SizedBox(
                                     width: 8,
                                   );
                                 },
                                 itemCount: helpBubbles.length,
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 10,
                             ),
                             SizedBox(
@@ -196,7 +196,8 @@ class HelpCenterScreen extends StatelessWidget {
                                       },
                                       child: Obx(
                                         () => AnimatedContainer(
-                                          duration: Duration(milliseconds: 300),
+                                          duration:
+                                              const Duration(milliseconds: 300),
                                           height:
                                               Get.find<ExpandContainerController>()
                                                           .index
@@ -217,72 +218,67 @@ class HelpCenterScreen extends StatelessWidget {
                                                   const EdgeInsets.symmetric(
                                                       vertical: 12,
                                                       horizontal: 12),
-                                              child:
-                                                  Get.find<ExpandContainerController>()
-                                                              .index
-                                                              .value ==
-                                                          index
-                                                      ? SingleChildScrollView(
-                                                          child: Column(
+                                              child: Get.find<ExpandContainerController>()
+                                                          .index
+                                                          .value ==
+                                                      index
+                                                  ? const SingleChildScrollView(
+                                                      child: Column(
+                                                        children: [
+                                                          Row(
                                                             children: [
-                                                              Row(
-                                                                children: [
-                                                                  Text(
-                                                                    'What are the premium subscription plans?',
-                                                                    style:
-                                                                        TextStyle(
-                                                                      fontSize:
-                                                                          14,
-                                                                      color: Colors
-                                                                          .white,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w500,
-                                                                    ),
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                              Divider(
-                                                                color: Colors
-                                                                    .white54,
-                                                                thickness: 0.3,
-                                                                indent: 10,
-                                                                endIndent: 10,
-                                                              ),
                                                               Text(
-                                                                'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
-                                                                maxLines: 3,
-                                                                overflow:
-                                                                    TextOverflow
-                                                                        .ellipsis,
+                                                                'What are the premium subscription plans?',
                                                                 style:
                                                                     TextStyle(
-                                                                  fontSize: 12,
+                                                                  fontSize: 14,
                                                                   color: Colors
-                                                                      .white70,
+                                                                      .white,
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .w500,
                                                                 ),
-                                                              )
+                                                              ),
                                                             ],
                                                           ),
-                                                        )
-                                                      : Row(
-                                                          children: [
-                                                            Text(
-                                                              'What are the premium subscription plans?',
-                                                              style: TextStyle(
-                                                                fontSize: 14,
-                                                                color: Colors
-                                                                    .white,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w500,
-                                                              ),
+                                                          Divider(
+                                                            color:
+                                                                Colors.white54,
+                                                            thickness: 0.3,
+                                                            indent: 10,
+                                                            endIndent: 10,
+                                                          ),
+                                                          Text(
+                                                            'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+                                                            maxLines: 3,
+                                                            overflow:
+                                                                TextOverflow
+                                                                    .ellipsis,
+                                                            style: TextStyle(
+                                                              fontSize: 12,
+                                                              color: Colors
+                                                                  .white70,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w500,
                                                             ),
-                                                          ],
+                                                          )
+                                                        ],
+                                                      ),
+                                                    )
+                                                  : const Row(
+                                                      children: [
+                                                        Text(
+                                                          'What are the premium subscription plans?',
+                                                          style: TextStyle(
+                                                            fontSize: 14,
+                                                            color: Colors.white,
+                                                            fontWeight:
+                                                                FontWeight.w500,
+                                                          ),
                                                         ),
+                                                      ],
+                                                    ),
                                             ),
                                           ),
                                         ),
@@ -309,7 +305,8 @@ class HelpCenterScreen extends StatelessWidget {
                                   },
                                   child: Obx(
                                     () => AnimatedContainer(
-                                      duration: Duration(milliseconds: 300),
+                                      duration:
+                                          const Duration(milliseconds: 300),
                                       height:
                                           Get.find<ExpandContainerController>()
                                                       .index
@@ -337,7 +334,7 @@ class HelpCenterScreen extends StatelessWidget {
                                                           Container(
                                                             child: Row(
                                                               children: [
-                                                                SizedBox(
+                                                                const SizedBox(
                                                                   width: 10,
                                                                 ),
                                                                 Icon(
@@ -347,14 +344,14 @@ class HelpCenterScreen extends StatelessWidget {
                                                                       .white,
                                                                   size: 25,
                                                                 ),
-                                                                SizedBox(
+                                                                const SizedBox(
                                                                   width: 10,
                                                                 ),
                                                                 Text(
                                                                   faqTitles[
                                                                       index],
                                                                   style:
-                                                                      TextStyle(
+                                                                      const TextStyle(
                                                                     color: Colors
                                                                         .white,
                                                                     fontWeight:
@@ -364,21 +361,21 @@ class HelpCenterScreen extends StatelessWidget {
                                                                         14,
                                                                   ),
                                                                 ),
-                                                                Spacer(),
-                                                                Icon(
+                                                                const Spacer(),
+                                                                const Icon(
                                                                   Icons
                                                                       .arrow_forward_ios_sharp,
                                                                   color: Colors
                                                                       .white,
                                                                   size: 20,
                                                                 ),
-                                                                SizedBox(
+                                                                const SizedBox(
                                                                   width: 10,
                                                                 ),
                                                               ],
                                                             ),
                                                           ),
-                                                          Divider(
+                                                          const Divider(
                                                             color:
                                                                 Colors.white70,
                                                             indent: 10,
@@ -387,13 +384,13 @@ class HelpCenterScreen extends StatelessWidget {
                                                           ),
                                                           Row(
                                                             children: [
-                                                              SizedBox(
+                                                              const SizedBox(
                                                                 width: 10,
                                                               ),
                                                               Text(
                                                                 faqItems[index],
                                                                 style:
-                                                                    TextStyle(
+                                                                    const TextStyle(
                                                                   color: Colors
                                                                       .white,
                                                                   fontSize: 14,
@@ -410,7 +407,7 @@ class HelpCenterScreen extends StatelessWidget {
                                                   : Container(
                                                       child: Row(
                                                         children: [
-                                                          SizedBox(
+                                                          const SizedBox(
                                                             width: 10,
                                                           ),
                                                           Icon(
@@ -418,12 +415,13 @@ class HelpCenterScreen extends StatelessWidget {
                                                             color: Colors.white,
                                                             size: 25,
                                                           ),
-                                                          SizedBox(
+                                                          const SizedBox(
                                                             width: 10,
                                                           ),
                                                           Text(
                                                             faqTitles[index],
-                                                            style: TextStyle(
+                                                            style:
+                                                                const TextStyle(
                                                               color:
                                                                   Colors.white,
                                                               fontWeight:
@@ -432,14 +430,14 @@ class HelpCenterScreen extends StatelessWidget {
                                                               fontSize: 14,
                                                             ),
                                                           ),
-                                                          Spacer(),
-                                                          Icon(
+                                                          const Spacer(),
+                                                          const Icon(
                                                             Icons
                                                                 .arrow_forward_ios_sharp,
                                                             color: Colors.white,
                                                             size: 20,
                                                           ),
-                                                          SizedBox(
+                                                          const SizedBox(
                                                             width: 10,
                                                           ),
                                                         ],

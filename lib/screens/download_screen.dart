@@ -11,7 +11,7 @@ class Download extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Padding(
-        padding: const EdgeInsets.all(12),
+        padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
         child: Column(
           children: [
             Row(
@@ -19,21 +19,21 @@ class Download extends StatelessWidget {
               children: [
                 GestureDetector(
                   onTap: Get.back,
-                  child: Icon(
+                  child: const Icon(
                     Icons.arrow_back_ios_rounded,
                     color: Colors.white,
                   ),
                 ),
-                Text(
+                const Text(
                   'Downloads',
                   style: TextStyle(color: Colors.white, fontSize: 20),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 20,
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             SizedBox(
@@ -101,13 +101,13 @@ class Download extends StatelessWidget {
                           color: Colors.white70,
                           size: 25,
                         ),
-                        SizedBox(width: 8),
+                        const SizedBox(width: 8),
                         const Icon(
                           Icons.file_download_outlined,
                           color: Colors.white70,
                           size: 25,
                         ),
-                        SizedBox(width: 8),
+                        const SizedBox(width: 8),
                         const Icon(
                           Icons.more_vert_outlined,
                           color: Colors.white70,

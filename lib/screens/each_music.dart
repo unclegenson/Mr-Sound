@@ -1,10 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_navigation/src/extension_navigation.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:mr_sound_2/constant/constants.dart';
 import 'package:mr_sound_2/controllers/each_music_controller.dart';
 import 'package:mr_sound_2/screens/play_music_screen.dart';
@@ -26,7 +21,7 @@ class Music extends StatelessWidget {
                   // image: ,
                   borderRadius: BorderRadius.circular(20),
                   color: Colors.white10.withOpacity(0.01),
-                  boxShadow: [
+                  boxShadow: const [
                     BoxShadow(blurRadius: 20, color: Colors.white12),
                   ],
                 ),
@@ -38,7 +33,7 @@ class Music extends StatelessWidget {
                           onTap: () {
                             Get.back();
                           },
-                          child: Icon(
+                          child: const Icon(
                             Icons.arrow_back_ios,
                             color: Colors.white,
                           ),
@@ -46,7 +41,7 @@ class Music extends StatelessWidget {
                       ],
                     ),
                     Padding(
-                      padding: EdgeInsets.all(30),
+                      padding: const EdgeInsets.all(30),
                       child: Stack(
                         alignment: Alignment.bottomCenter,
                         children: [
@@ -77,7 +72,7 @@ class Music extends StatelessWidget {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
+                            const Text(
                               'Artist',
                               style: TextStyle(
                                 fontSize: 14,
@@ -87,7 +82,7 @@ class Music extends StatelessWidget {
                             ),
                             Row(
                               children: [
-                                Text(
+                                const Text(
                                   'Behnam Bani',
                                   style: TextStyle(
                                     fontSize: 24,
@@ -95,7 +90,7 @@ class Music extends StatelessWidget {
                                     fontWeight: FontWeight.w700,
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 10,
                                 ),
                                 GestureDetector(
@@ -105,13 +100,13 @@ class Music extends StatelessWidget {
                                       '',
                                       titleText: Row(
                                         children: [
-                                          Text(
+                                          const Text(
                                             "Start Download...",
                                             style: TextStyle(
                                               color: Colors.white70,
                                             ),
                                           ),
-                                          Spacer(),
+                                          const Spacer(),
                                           GestureDetector(
                                             onTap: Get.back,
                                             child: Container(
@@ -120,9 +115,8 @@ class Music extends StatelessWidget {
                                                       BorderRadius.circular(10),
                                                   color:
                                                       ConstColors.buttonColor),
-                                              child: Padding(
-                                                padding:
-                                                    const EdgeInsets.all(8.0),
+                                              child: const Padding(
+                                                padding: EdgeInsets.all(8.0),
                                                 child: Text(
                                                   'Cancel',
                                                   style: TextStyle(
@@ -135,7 +129,7 @@ class Music extends StatelessWidget {
                                         ],
                                       ),
                                       shouldIconPulse: false,
-                                      messageText: SizedBox(
+                                      messageText: const SizedBox(
                                         child: Text(
                                           "Download Started. You'll have this song in just a moment.",
                                           style: TextStyle(
@@ -143,9 +137,9 @@ class Music extends StatelessWidget {
                                           ),
                                         ),
                                       ),
-                                      margin: EdgeInsets.all(10),
-                                      icon: Padding(
-                                        padding: const EdgeInsets.only(left: 4),
+                                      margin: const EdgeInsets.all(10),
+                                      icon: const Padding(
+                                        padding: EdgeInsets.only(left: 4),
                                         child: Icon(
                                           Icons.downloading_rounded,
                                           size: 40,
@@ -153,16 +147,16 @@ class Music extends StatelessWidget {
                                         ),
                                       ),
                                       colorText: Colors.white,
-                                      duration: Duration(seconds: 3),
+                                      duration: const Duration(seconds: 3),
                                       snackPosition: SnackPosition.BOTTOM,
                                     );
                                   },
-                                  child: Icon(
+                                  child: const Icon(
                                     Icons.file_download_outlined,
                                     color: Colors.white,
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 10,
                                 ),
                                 Obx(
@@ -204,7 +198,7 @@ class Music extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Container(
@@ -217,11 +211,11 @@ class Music extends StatelessWidget {
                           borderRadius: BorderRadius.circular(20),
                           color: Colors.white10,
                         ),
-                        child: Padding(
+                        child: const Padding(
                           padding:
                               EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                           child: IntrinsicHeight(
-                            child: const Row(
+                            child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Column(
@@ -313,15 +307,15 @@ class Music extends StatelessWidget {
                       ),
                     ),
                     onTap: () {
-                      Get.to(() => PlayTest());
+                      Get.to(() => const PlayTest());
                     },
                   )
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              Row(
+              const Row(
                 children: [
                   Text(
                     'Popular Songs',
@@ -333,7 +327,7 @@ class Music extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               SizedBox(

@@ -2,17 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 
 class ShimmerLoadingScreen extends StatelessWidget {
+  const ShimmerLoadingScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Shimmer Loading'),
+        title: const Text('Shimmer Loading'),
       ),
       body: FutureBuilder(
         future: fetchData(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return ShimmerList(); // Shimmer effect while loading
+            return const ShimmerList(); // Shimmer effect while loading
           } else if (snapshot.hasError) {
             return Center(
               child: Text('Error: ${snapshot.error}'),
@@ -27,12 +29,14 @@ class ShimmerLoadingScreen extends StatelessWidget {
 
   Future<List<String>> fetchData() async {
     // Simulate data fetching delay
-    await Future.delayed(Duration(seconds: 6));
+    await Future.delayed(const Duration(seconds: 6));
     return ['Item 1', 'Item 2', 'Item 3'];
   }
 }
 
 class ShimmerList extends StatelessWidget {
+  const ShimmerList({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Shimmer.fromColors(
@@ -57,7 +61,7 @@ class ShimmerList extends StatelessWidget {
 class YourDataWidget extends StatelessWidget {
   final List<String> data;
 
-  YourDataWidget({required this.data});
+  const YourDataWidget({super.key, required this.data});
 
   @override
   Widget build(BuildContext context) {

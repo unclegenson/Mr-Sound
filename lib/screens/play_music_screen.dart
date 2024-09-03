@@ -1,12 +1,8 @@
 import 'dart:math';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_audio_waveforms/flutter_audio_waveforms.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:mr_sound_2/constant/constants.dart';
 import 'package:mr_sound_2/controllers/music_player_page.dart';
 import 'package:mr_sound_2/controllers/show_end_widget_controller.dart';
@@ -67,20 +63,20 @@ class _PlayTestState extends State<PlayTest> {
                       borderRadius: BorderRadius.circular(10),
                       color: ConstColors.buttonColor,
                     ),
-                    padding: EdgeInsets.symmetric(horizontal: 10),
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
                     width: Get.width,
                     height: 70,
                     child: Row(
                       children: [
-                        Icon(
+                        const Icon(
                           Icons.circle,
                           color: Colors.black,
                           size: 60,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 6,
                         ),
-                        Column(
+                        const Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -102,7 +98,7 @@ class _PlayTestState extends State<PlayTest> {
                             ),
                           ],
                         ),
-                        Spacer(),
+                        const Spacer(),
                         Container(
                           height: 50,
                           width: 50,
@@ -112,7 +108,7 @@ class _PlayTestState extends State<PlayTest> {
                           ),
                           child: IconButton(
                             onPressed: () {},
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.pause,
                               color: Colors.white,
                               size: 25,
@@ -122,7 +118,7 @@ class _PlayTestState extends State<PlayTest> {
                       ],
                     ),
                   )
-                : SizedBox(),
+                : const SizedBox(),
         backgroundColor: ConstColors.backgroundColor,
         body: NotificationListener<ScrollUpdateNotification>(
           onNotification: (notification) {
@@ -142,7 +138,7 @@ class _PlayTestState extends State<PlayTest> {
             slivers: [
               SliverAppBar(
                 pinned: true,
-                title: Text(
+                title: const Text(
                   'Music Player',
                   style: TextStyle(color: Colors.white, fontSize: 20),
                 ),
@@ -153,7 +149,7 @@ class _PlayTestState extends State<PlayTest> {
                   onTap: () {
                     Get.back();
                   },
-                  child: Icon(
+                  child: const Icon(
                     Icons.arrow_back_ios_new_rounded,
                     color: Colors.white,
                   ),
@@ -176,7 +172,7 @@ class _PlayTestState extends State<PlayTest> {
                                   Container(
                                     decoration: BoxDecoration(
                                       color: ConstColors.backgroundColor,
-                                      borderRadius: BorderRadius.only(
+                                      borderRadius: const BorderRadius.only(
                                         topLeft: Radius.circular(20),
                                         topRight: Radius.circular(20),
                                       ),
@@ -184,21 +180,21 @@ class _PlayTestState extends State<PlayTest> {
                                     height: Get.height * 7 / 10,
                                     child: Column(
                                       children: [
-                                        Spacer(),
-                                        Divider(
+                                        const Spacer(),
+                                        const Divider(
                                           indent: 20,
                                           endIndent: 20,
                                           thickness: 0.5,
                                           color: Colors.white54,
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           height: 10,
                                         ),
                                         SizedBox(
                                           height: Get.height * 3.1 / 7,
                                           child: ListView.builder(
                                             physics:
-                                                NeverScrollableScrollPhysics(),
+                                                const NeverScrollableScrollPhysics(),
                                             itemCount: 9,
                                             itemBuilder: (context, index) {
                                               return Material(
@@ -207,15 +203,16 @@ class _PlayTestState extends State<PlayTest> {
                                                 child: ListTile(
                                                   onTap: () {},
                                                   dense: true,
-                                                  visualDensity: VisualDensity(
-                                                      vertical: -4),
+                                                  visualDensity:
+                                                      const VisualDensity(
+                                                          vertical: -4),
                                                   leading: Icon(
                                                     icons[index],
                                                     color: Colors.white,
                                                   ),
                                                   title: Text(
                                                     titles[index],
-                                                    style: TextStyle(
+                                                    style: const TextStyle(
                                                       color: Colors.white,
                                                       fontSize: 17,
                                                       fontWeight:
@@ -227,7 +224,7 @@ class _PlayTestState extends State<PlayTest> {
                                             },
                                           ),
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           height: 8,
                                         ),
                                       ],
@@ -309,8 +306,8 @@ class _PlayTestState extends State<PlayTest> {
                         ),
                       );
                     },
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
+                    child: const Padding(
+                      padding: EdgeInsets.all(8.0),
                       child: Icon(
                         Icons.more_vert_rounded,
                         size: 32,
@@ -344,10 +341,10 @@ class _PlayTestState extends State<PlayTest> {
               SliverToBoxAdapter(
                 child: Column(
                   children: [
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
-                    Text(
+                    const Text(
                       'Sunday Morning',
                       style: TextStyle(
                         color: Colors.white,
@@ -355,7 +352,7 @@ class _PlayTestState extends State<PlayTest> {
                         fontSize: 30,
                       ),
                     ),
-                    Text(
+                    const Text(
                       'Behnam Bani',
                       style: TextStyle(
                         color: Colors.white70,
@@ -363,7 +360,7 @@ class _PlayTestState extends State<PlayTest> {
                         fontSize: 18,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     RectangleWaveform(
@@ -377,14 +374,14 @@ class _PlayTestState extends State<PlayTest> {
                       inactiveColor: Colors.white10,
                       width: Get.width - 40,
                       absolute: true,
-                      maxDuration: Duration(seconds: 10),
-                      elapsedDuration: Duration(seconds: 6),
+                      maxDuration: const Duration(seconds: 10),
+                      elapsedDuration: const Duration(seconds: 6),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 4,
                     ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 20),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -399,7 +396,7 @@ class _PlayTestState extends State<PlayTest> {
                         ],
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 40,
                     ),
                     Padding(
@@ -409,14 +406,14 @@ class _PlayTestState extends State<PlayTest> {
                         children: [
                           IconButton(
                             onPressed: () {},
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.repeat,
                               color: Colors.white,
                             ),
                           ),
                           IconButton(
                             onPressed: () {},
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.keyboard_double_arrow_left_sharp,
                               color: Colors.white,
                             ),
@@ -435,14 +432,14 @@ class _PlayTestState extends State<PlayTest> {
                           ),
                           IconButton(
                             onPressed: () {},
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.keyboard_double_arrow_right_sharp,
                               color: Colors.white,
                             ),
                           ),
                           IconButton(
                             onPressed: () {},
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.shuffle,
                               color: Colors.white,
                             ),
@@ -453,7 +450,7 @@ class _PlayTestState extends State<PlayTest> {
                     SizedBox(
                       height: Get.height / 16,
                     ),
-                    Column(
+                    const Column(
                       children: [
                         Icon(
                           Icons.keyboard_arrow_up_outlined,
@@ -466,7 +463,7 @@ class _PlayTestState extends State<PlayTest> {
                         )
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 45,
                     ),
                     Padding(
@@ -474,7 +471,7 @@ class _PlayTestState extends State<PlayTest> {
                       child: SizedBox(
                         height: Get.height,
                         width: Get.width,
-                        child: Text(
+                        child: const Text(
                           'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
                           style: TextStyle(
                             fontSize: 20,

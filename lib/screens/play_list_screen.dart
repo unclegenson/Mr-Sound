@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:mr_sound_2/constant/constants.dart';
 import 'package:mr_sound_2/controllers/playlist_controller.dart';
@@ -26,7 +24,7 @@ class PlayList extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Padding(
-        padding: EdgeInsets.all(12),
+        padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -35,12 +33,12 @@ class PlayList extends StatelessWidget {
                 children: [
                   GestureDetector(
                     onTap: Get.back,
-                    child: Icon(
+                    child: const Icon(
                       Icons.arrow_back_ios_rounded,
                       color: Colors.white,
                     ),
                   ),
-                  Text(
+                  const Text(
                     'Playlists',
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
@@ -48,7 +46,7 @@ class PlayList extends StatelessWidget {
                     () => GestureDetector(
                       onTap: _toggleSearch,
                       child: AnimatedContainer(
-                        duration: Duration(milliseconds: 300),
+                        duration: const Duration(milliseconds: 300),
                         width: Get.find<ShowEndWidget_SearchBar_Controller>()
                                 .isSearchActive
                                 .value
@@ -70,19 +68,21 @@ class PlayList extends StatelessWidget {
                                           .value
                                       ? 10
                                       : 0),
-                              child: Icon(Icons.search, color: Colors.white),
+                              child:
+                                  const Icon(Icons.search, color: Colors.white),
                             ),
                             Get.find<ShowEndWidget_SearchBar_Controller>()
                                     .isSearchActive
                                     .value
                                 ? Expanded(
                                     child: Padding(
-                                      padding: EdgeInsets.only(right: 10),
+                                      padding: const EdgeInsets.only(right: 10),
                                       child: TextField(
                                         autofocus: true,
                                         focusNode: _focusNode,
-                                        style: TextStyle(color: Colors.white),
-                                        decoration: InputDecoration(
+                                        style: const TextStyle(
+                                            color: Colors.white),
+                                        decoration: const InputDecoration(
                                           border: InputBorder.none,
                                           hintText: "Type to search...",
                                           hintStyle:
@@ -99,7 +99,7 @@ class PlayList extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               GestureDetector(
@@ -108,14 +108,14 @@ class PlayList extends StatelessWidget {
                   Get.snackbar(
                     'Playlist',
                     'To create a playlist first choose your favorite songs.',
-                    margin: EdgeInsets.all(10),
-                    icon: Icon(
+                    margin: const EdgeInsets.all(10),
+                    icon: const Icon(
                       Icons.playlist_add_rounded,
                       size: 25,
                       color: Colors.white,
                     ),
                     colorText: Colors.white,
-                    duration: Duration(seconds: 5),
+                    duration: const Duration(seconds: 5),
                   );
                 },
                 child: SizedBox(
@@ -139,10 +139,10 @@ class PlayList extends StatelessWidget {
                             ),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 8,
                         ),
-                        Text(
+                        const Text(
                           'Create Playlist',
                           style: TextStyle(
                             color: Colors.white,
@@ -150,7 +150,7 @@ class PlayList extends StatelessWidget {
                             fontSize: 20,
                           ),
                         ),
-                        Spacer(),
+                        const Spacer(),
                         Get.find<PlaylistController>().selectSongs.value
                             ? Row(
                                 children: [
@@ -164,7 +164,7 @@ class PlayList extends StatelessWidget {
                                           .value = false;
                                     },
                                     icon: Container(
-                                      decoration: BoxDecoration(
+                                      decoration: const BoxDecoration(
                                         shape: BoxShape.circle,
                                         color: Colors.redAccent,
                                       ),
@@ -179,7 +179,7 @@ class PlayList extends StatelessWidget {
                                     ),
                                   ),
                                   Container(
-                                    decoration: BoxDecoration(
+                                    decoration: const BoxDecoration(
                                       shape: BoxShape.circle,
                                       color: Colors.green,
                                     ),
@@ -192,14 +192,15 @@ class PlayList extends StatelessWidget {
                                           Get.snackbar(
                                             'Error',
                                             'Please add at least 3 Songs.',
-                                            margin: EdgeInsets.all(10),
-                                            icon: Icon(
+                                            margin: const EdgeInsets.all(10),
+                                            icon: const Icon(
                                               Icons.error_rounded,
                                               size: 25,
                                               color: Colors.orangeAccent,
                                             ),
                                             colorText: Colors.orangeAccent,
-                                            duration: Duration(seconds: 3),
+                                            duration:
+                                                const Duration(seconds: 3),
                                           );
                                         } else {
                                           Get.bottomSheet(
@@ -207,7 +208,8 @@ class PlayList extends StatelessWidget {
                                               width: Get.width,
                                               height: Get.height / 2,
                                               decoration: BoxDecoration(
-                                                borderRadius: BorderRadius.only(
+                                                borderRadius:
+                                                    const BorderRadius.only(
                                                   topLeft: Radius.circular(20),
                                                   topRight: Radius.circular(20),
                                                 ),
@@ -229,7 +231,7 @@ class PlayList extends StatelessWidget {
                                                             .buttonColor
                                                             .withAlpha(100),
                                                       ),
-                                                      SizedBox(
+                                                      const SizedBox(
                                                         height: 4,
                                                       ),
                                                       Text(
@@ -257,7 +259,7 @@ class PlayList extends StatelessWidget {
                                                           ),
                                                         ],
                                                       ),
-                                                      SizedBox(
+                                                      const SizedBox(
                                                         height: 4,
                                                       ),
                                                       Container(
@@ -280,7 +282,7 @@ class PlayList extends StatelessWidget {
                                                                       16),
                                                           child: TextFormField(
                                                             decoration:
-                                                                InputDecoration(
+                                                                const InputDecoration(
                                                               hintText:
                                                                   'Enter Title',
                                                               border:
@@ -290,7 +292,7 @@ class PlayList extends StatelessWidget {
                                                           ),
                                                         ),
                                                       ),
-                                                      SizedBox(
+                                                      const SizedBox(
                                                         height: 10,
                                                       ),
                                                       Row(
@@ -308,7 +310,7 @@ class PlayList extends StatelessWidget {
                                                           ),
                                                         ],
                                                       ),
-                                                      SizedBox(
+                                                      const SizedBox(
                                                         height: 4,
                                                       ),
                                                       Container(
@@ -331,7 +333,7 @@ class PlayList extends StatelessWidget {
                                                                       16),
                                                           child: TextFormField(
                                                             decoration:
-                                                                InputDecoration(
+                                                                const InputDecoration(
                                                               hintText:
                                                                   'Enter Short Description',
                                                               border:
@@ -341,7 +343,7 @@ class PlayList extends StatelessWidget {
                                                           ),
                                                         ),
                                                       ),
-                                                      SizedBox(
+                                                      const SizedBox(
                                                         height: 10,
                                                       ),
                                                       Row(
@@ -359,7 +361,7 @@ class PlayList extends StatelessWidget {
                                                           ),
                                                         ],
                                                       ),
-                                                      SizedBox(
+                                                      const SizedBox(
                                                         height: 4,
                                                       ),
                                                       Container(
@@ -382,14 +384,14 @@ class PlayList extends StatelessWidget {
                                                                       .white),
                                                           isExpanded: true,
                                                           decoration:
-                                                              InputDecoration(
+                                                              const InputDecoration(
                                                             iconColor:
                                                                 Colors.white,
                                                             contentPadding:
-                                                                const EdgeInsets
+                                                                EdgeInsets
                                                                     .symmetric(
-                                                                    vertical:
-                                                                        16),
+                                                                        vertical:
+                                                                            16),
                                                             border: InputBorder
                                                                 .none,
                                                           ),
@@ -436,7 +438,7 @@ class PlayList extends StatelessWidget {
                                                               IconStyleData(
                                                             icon: Padding(
                                                               padding:
-                                                                  EdgeInsets
+                                                                  const EdgeInsets
                                                                       .only(
                                                                 right: 10,
                                                               ),
@@ -502,7 +504,8 @@ class PlayList extends StatelessWidget {
                                                                       .withAlpha(
                                                                           100),
                                                                 ),
-                                                                child: Center(
+                                                                child:
+                                                                    const Center(
                                                                   child: Text(
                                                                     'Cancel',
                                                                     style:
@@ -537,10 +540,11 @@ class PlayList extends StatelessWidget {
                                                                       SnackPosition
                                                                           .BOTTOM,
                                                                   margin:
-                                                                      EdgeInsets
+                                                                      const EdgeInsets
                                                                           .all(
-                                                                              10),
-                                                                  icon: Icon(
+                                                                          10),
+                                                                  icon:
+                                                                      const Icon(
                                                                     Icons.check,
                                                                     size: 25,
                                                                     color: Colors
@@ -550,7 +554,7 @@ class PlayList extends StatelessWidget {
                                                                       Colors
                                                                           .green,
                                                                   duration:
-                                                                      Duration(
+                                                                      const Duration(
                                                                           seconds:
                                                                               4),
                                                                 );
@@ -570,7 +574,8 @@ class PlayList extends StatelessWidget {
                                                                   color: ConstColors
                                                                       .buttonColor,
                                                                 ),
-                                                                child: Center(
+                                                                child:
+                                                                    const Center(
                                                                   child: Text(
                                                                     'Create',
                                                                     style:
@@ -607,13 +612,13 @@ class PlayList extends StatelessWidget {
                                   ),
                                 ],
                               )
-                            : SizedBox(),
+                            : const SizedBox(),
                       ],
                     ),
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Obx(
@@ -667,12 +672,12 @@ class PlayList extends StatelessWidget {
                                           Get.find<PlaylistController>()
                                                   .selectedIndexes
                                                   .contains(index)
-                                              ? Icon(
+                                              ? const Icon(
                                                   Icons.check_circle_sharp,
                                                   color: Colors.black,
                                                   size: 25,
                                                 )
-                                              : SizedBox(),
+                                              : const SizedBox(),
                                         ],
                                       ),
                                       const SizedBox(
@@ -722,7 +727,7 @@ class PlayList extends StatelessWidget {
                                         color: Colors.white70,
                                         size: 25,
                                       ),
-                                      SizedBox(width: 4),
+                                      const SizedBox(width: 4),
                                     ],
                                   ),
                                 ),
@@ -788,7 +793,7 @@ class PlayList extends StatelessWidget {
                                       color: Colors.white70,
                                       size: 25,
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       width: 4,
                                     ),
                                   ],

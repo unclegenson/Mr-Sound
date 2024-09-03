@@ -22,41 +22,50 @@ class _NavScreenState extends State<NavScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: Obx(
-        () => BottomNavigationBar(
-          elevation: 100,
-          currentIndex: Get.find<NavController>().currentScreen.value,
-          selectedItemColor: ConstColors.buttonColor,
-          unselectedItemColor: Colors.grey,
-          onTap: (value) {
-            Get.find<NavController>().currentScreen.value = value;
-          },
-          items: [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: 'Home',
-              backgroundColor: ConstColors.backgroundColor,
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.search),
-              label: 'Explore',
-              backgroundColor: ConstColors.backgroundColor,
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.file_download_outlined),
-              label: 'Download',
-              backgroundColor: ConstColors.backgroundColor,
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.playlist_play_rounded),
-              label: 'Playlist',
-              backgroundColor: ConstColors.backgroundColor,
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              label: 'Profile',
-              backgroundColor: ConstColors.backgroundColor,
-            ),
-          ],
+        () => Container(
+          decoration: const BoxDecoration(
+            boxShadow: <BoxShadow>[
+              BoxShadow(
+                color: Colors.black,
+                blurRadius: 10,
+              ),
+            ],
+          ),
+          child: BottomNavigationBar(
+            currentIndex: Get.find<NavController>().currentScreen.value,
+            selectedItemColor: ConstColors.buttonColor,
+            unselectedItemColor: Colors.grey,
+            onTap: (value) {
+              Get.find<NavController>().currentScreen.value = value;
+            },
+            items: [
+              BottomNavigationBarItem(
+                icon: const Icon(Icons.home),
+                label: 'Home',
+                backgroundColor: ConstColors.backgroundColor,
+              ),
+              BottomNavigationBarItem(
+                icon: const Icon(Icons.search),
+                label: 'Explore',
+                backgroundColor: ConstColors.backgroundColor,
+              ),
+              BottomNavigationBarItem(
+                icon: const Icon(Icons.file_download_outlined),
+                label: 'Download',
+                backgroundColor: ConstColors.backgroundColor,
+              ),
+              BottomNavigationBarItem(
+                icon: const Icon(Icons.playlist_play_rounded),
+                label: 'Playlist',
+                backgroundColor: ConstColors.backgroundColor,
+              ),
+              BottomNavigationBarItem(
+                icon: const Icon(Icons.person),
+                label: 'Profile',
+                backgroundColor: ConstColors.backgroundColor,
+              ),
+            ],
+          ),
         ),
       ),
       backgroundColor: ConstColors.backgroundColor,
@@ -66,9 +75,9 @@ class _NavScreenState extends State<NavScreen> {
 }
 
 List bodies = [
-  HomeScreen(),
-  Explore(),
-  Download(),
-  PlayList(),
-  ProfileScreen(),
+  const HomeScreen(),
+  const Explore(),
+  const Download(),
+  const PlayList(),
+  const ProfileScreen(),
 ];
