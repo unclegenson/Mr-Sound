@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:mr_sound_2/constant/constants.dart';
 import 'package:mr_sound_2/controllers/show_end_widget_controller.dart';
@@ -8,6 +7,34 @@ import 'package:mr_sound_2/screens/choose_your_plan.dart';
 import 'package:mr_sound_2/screens/each_music.dart';
 
 final _focusNode = FocusNode();
+List categories = [
+  'Pop music',
+  'Hip hop music',
+  'Rock music',
+  'Rhythm and blues',
+  'Guran',
+  'Soul music',
+  'Reggae music',
+  'Country music',
+  'Funk music',
+  'Folk music',
+  'Jazz music',
+  'Disco music',
+  'Classical music',
+  'Electronic music',
+  'Blues music',
+  'New age music',
+  'Christian Music',
+  'Traditional Music',
+  'Ska music',
+  'Metal music',
+  'Brazilian music',
+  'Flamenco music',
+  'Salsa music',
+  'Merengue music',
+  'Bachata music',
+  'Indian classic',
+];
 
 void _toggleSearch() {
   Get.find<ShowEndWidget_SearchBar_Controller>().isSearchActive.value =
@@ -27,7 +54,7 @@ class HomeScreen extends StatelessWidget {
         padding: const EdgeInsets.fromLTRB(16, 16, 0, 0),
         child: SingleChildScrollView(
           child: SizedBox(
-            height: Get.height * 1.2,
+            height: Get.height * 2.1,
             child: Column(
               children: [
                 Padding(
@@ -449,6 +476,168 @@ class HomeScreen extends StatelessWidget {
                               ),
                             ],
                           ),
+                        ),
+                      );
+                    },
+                    itemCount: 10,
+                  ),
+                ),
+                const SizedBox(
+                  height: 16,
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(right: 16),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Categories',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 22,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(right: 16),
+                  child: SizedBox(
+                    height: Get.height * 6 / 10,
+                    width: Get.width,
+                    child: GridView.builder(
+                      itemCount: categories.length,
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                      ),
+                      itemBuilder: (context, index) {
+                        return Padding(
+                          padding: const EdgeInsets.all(4),
+                          child: Stack(
+                            alignment: Alignment.bottomRight,
+                            children: [
+                              Container(
+                                height: Get.height / 4,
+                                width: Get.width / 2 - 20,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  color: ConstColors.buttonColor,
+                                ),
+                                child: Center(
+                                  child: Text(
+                                    categories[index],
+                                    style: const TextStyle(
+                                      fontSize: 18,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              IconButton(
+                                onPressed: () {},
+                                icon: const Icon(
+                                  Icons.favorite_border,
+                                  color: Colors.white,
+                                ),
+                              )
+                            ],
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 15,
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(right: 16),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Suggested for You',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 22,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                SizedBox(
+                  height: Get.height / 5,
+                  width: Get.width,
+                  child: ListView.separated(
+                    separatorBuilder: (context, index) =>
+                        const SizedBox(width: 12),
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (context, index) {
+                      return GestureDetector(
+                        onTap: () {
+                          Get.to(() => const Music());
+                        },
+                        child: Column(
+                          children: [
+                            Container(
+                              width: 120,
+                              height: 120,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: ConstColors.buttonColor,
+                              ),
+                              child: Center(
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: ConstColors.itemColor,
+                                  ),
+                                  child: IconButton(
+                                    icon: Icon(
+                                      Icons.play_arrow,
+                                      color: ConstColors.buttonColor,
+                                    ),
+                                    onPressed: () {},
+                                  ),
+                                ),
+                              ),
+                            ),
+                            const Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Sunday Morning',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 2,
+                                ),
+                                Text(
+                                  'Behnam Bani',
+                                  style: TextStyle(
+                                    fontSize: 13,
+                                    color: Colors.white70,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                )
+                              ],
+                            ),
+                          ],
                         ),
                       );
                     },

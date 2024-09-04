@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mr_sound_2/constant/constants.dart';
 import 'package:mr_sound_2/controllers/splash_controller.dart';
+import 'package:mr_sound_2/screens/create_account_screen.dart';
 import 'package:mr_sound_2/screens/nav_screen.dart';
 
 late PageController _pageController;
@@ -158,7 +159,7 @@ class _SplashScreensState extends State<SplashScreens> {
                             curve: Curves.ease,
                           );
                         } else {
-                          Get.to(() => const NavScreen());
+                          Get.to(() => const CreateAccount());
                         }
                       },
                       icon: Icon(
@@ -185,7 +186,7 @@ class _SplashScreensState extends State<SplashScreens> {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      Get.to(() => const NavScreen());
+                      Get.to(() => const CreateAccount());
                     },
                     child: Text(
                       'Skip',
