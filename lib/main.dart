@@ -52,4 +52,12 @@ class _MyAppState extends State<MyApp> {
 //todo: listviewBuilders horizontal fix
 //todo: decrease app size
 //todo: check transition for bottom nav bar
+//todo: add phone codes to complete 
+//todo: enable notif screen
+//todo: verify code screen
 
+//todo: Create Favorite Songs screen
+//todo: Create Notifications screen
+//todo: Create Following screen
+//todo: Create Activity screen
+//todo: Create Settings screen

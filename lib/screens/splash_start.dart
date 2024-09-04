@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:mr_sound_2/constant/constants.dart';
+import 'package:mr_sound_2/screens/sign_in_screen.dart';
 import 'package:mr_sound_2/screens/splash_screens.dart';
 
 class SplashStartScreen extends StatelessWidget {
@@ -109,14 +111,19 @@ class SplashStartScreen extends StatelessWidget {
                 const SizedBox(
                   width: 4,
                 ),
-                Text(
-                  'Sign In',
-                  style: TextStyle(
-                    decoration: TextDecoration.underline,
-                    decorationColor: ConstColors.buttonColor,
-                    fontSize: 16,
-                    color: ConstColors.buttonColor,
-                    fontWeight: FontWeight.w500,
+                GestureDetector(
+                  onTap: () {
+                    Get.to(() => const SignIn());
+                  },
+                  child: Text(
+                    'Sign In',
+                    style: TextStyle(
+                      decoration: TextDecoration.underline,
+                      decorationColor: ConstColors.buttonColor,
+                      fontSize: 16,
+                      color: ConstColors.buttonColor,
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
                 ),
               ],

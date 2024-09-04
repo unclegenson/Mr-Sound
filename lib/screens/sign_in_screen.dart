@@ -1,14 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:mr_sound_2/constant/constants.dart';
 import 'package:mr_sound_2/screens/complete_your_profile.dart';
-import 'package:mr_sound_2/screens/sign_in_screen.dart';
+import 'package:mr_sound_2/screens/create_account_screen.dart';
+import 'package:mr_sound_2/screens/forgot_password.dart';
 
-class CreateAccount extends StatelessWidget {
-  const CreateAccount({super.key});
+class SignIn extends StatelessWidget {
+  const SignIn({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,10 +22,10 @@ class CreateAccount extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 const SizedBox(
-                  height: 10,
+                  height: 30,
                 ),
                 const Text(
-                  'Create Account',
+                  'Sign In',
                   style: TextStyle(
                     fontSize: 28,
                     color: Colors.white,
@@ -33,7 +33,7 @@ class CreateAccount extends StatelessWidget {
                   ),
                 ),
                 const Text(
-                  'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+                  'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.',
                   style: TextStyle(
                     fontSize: 12,
                     color: Colors.white70,
@@ -43,44 +43,6 @@ class CreateAccount extends StatelessWidget {
                 ),
                 Column(
                   children: [
-                    Row(
-                      children: [
-                        Text(
-                          'Name',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500,
-                            color: ConstColors.buttonColor,
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 4,
-                    ),
-                    Container(
-                      width: Get.width,
-                      height: 50,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: ConstColors.buttonColor.withAlpha(100),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 16),
-                        child: TextFormField(
-                          style: TextStyle(color: ConstColors.buttonColor),
-                          decoration: InputDecoration(
-                            hintText: 'Mohammad Mahdi',
-                            border: InputBorder.none,
-                            hintStyle:
-                                TextStyle(color: ConstColors.buttonColor),
-                          ),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
                     Row(
                       children: [
                         Text(
@@ -168,37 +130,26 @@ class CreateAccount extends StatelessWidget {
                         ),
                       ],
                     ),
+                    const SizedBox(
+                      height: 10,
+                    ),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        Checkbox(
-                          activeColor: ConstColors.buttonColor,
-                          checkColor: ConstColors.backgroundColor,
-                          shape: BeveledRectangleBorder(
-                            borderRadius: BorderRadius.circular(2),
-                          ),
-                          value: true,
-                          onChanged: (value) {},
-                        ),
-                        const Text(
-                          'Agree with',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 4,
-                        ),
-                        Text(
-                          'Terms & Condition',
-                          style: TextStyle(
-                            decorationColor: ConstColors.buttonColor,
-                            decorationThickness: 1.5,
-                            color: ConstColors.buttonColor,
-                            decoration: TextDecoration.underline,
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
+                        GestureDetector(
+                          onTap: () {
+                            Get.to(() => const ForgotPassword());
+                          },
+                          child: Text(
+                            'Forgot Password?',
+                            style: TextStyle(
+                              decorationColor: ConstColors.buttonColor,
+                              decorationThickness: 1.5,
+                              color: ConstColors.buttonColor,
+                              decoration: TextDecoration.underline,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                            ),
                           ),
                         )
                       ],
@@ -206,7 +157,7 @@ class CreateAccount extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(
-                  height: 10,
+                  height: 2,
                 ),
                 GestureDetector(
                   onTap: () {
@@ -221,7 +172,7 @@ class CreateAccount extends StatelessWidget {
                     height: 55,
                     child: const Center(
                       child: Text(
-                        'Sign Up',
+                        'Sign In',
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.w500,
@@ -244,7 +195,7 @@ class CreateAccount extends StatelessWidget {
                       ),
                     ),
                     const Text(
-                      'Or Sign Up with',
+                      'Or Sign In with',
                       style: TextStyle(
                         fontSize: 13,
                         fontWeight: FontWeight.w500,
@@ -305,7 +256,7 @@ class CreateAccount extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const Text(
-                      'Already have an account?',
+                      'Dont have an account?',
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 13,
@@ -317,10 +268,10 @@ class CreateAccount extends StatelessWidget {
                     ),
                     GestureDetector(
                       onTap: () {
-                        Get.to(() => const SignIn());
+                        Get.to(() => const CreateAccount());
                       },
                       child: Text(
-                        'Sign In',
+                        'Sign Up',
                         style: TextStyle(
                           decorationColor: ConstColors.buttonColor,
                           decorationThickness: 1.5,
@@ -334,7 +285,7 @@ class CreateAccount extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(
-                  height: 55,
+                  height: 60,
                 ),
               ],
             ),
