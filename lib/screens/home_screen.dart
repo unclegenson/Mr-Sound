@@ -264,12 +264,12 @@ class HomeScreen extends StatelessWidget {
                                     shape: BoxShape.circle,
                                     color: ConstColors.itemColor,
                                   ),
-                                  child: IconButton(
-                                    icon: Icon(
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Icon(
                                       Icons.play_arrow,
                                       color: ConstColors.buttonColor,
                                     ),
-                                    onPressed: () {},
                                   ),
                                 ),
                               ),

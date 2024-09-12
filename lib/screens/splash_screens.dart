@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:mr_sound_2/constant/constants.dart';
 import 'package:mr_sound_2/controllers/splash_controller.dart';
 import 'package:mr_sound_2/screens/create_account_screen.dart';
-import 'package:mr_sound_2/screens/nav_screen.dart';
 
 late PageController _pageController;
 List upTexts = [

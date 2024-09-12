@@ -138,7 +138,7 @@ class SignIn extends StatelessWidget {
                       children: [
                         GestureDetector(
                           onTap: () {
-                            Get.to(() => const ForgotPassword());
+                            Get.to(() => const NewPassword());
                           },
                           child: Text(
                             'Forgot Password?',

@@ -1,7 +1,9 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:mr_sound_2/constant/constants.dart';
+import 'package:mr_sound_2/screens/enable_notif_screen.dart';
 
 List categoryItems = ['Male', 'Female'];
 
@@ -244,20 +246,25 @@ class CompleteProfile extends StatelessWidget {
                 const SizedBox(
                   height: 10,
                 ),
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: ConstColors.buttonColor,
-                  ),
-                  width: Get.width,
-                  height: 55,
-                  child: const Center(
-                    child: Text(
-                      'Complete Profile',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.white,
+                GestureDetector(
+                  onTap: () {
+                    Get.to(() => const EnableNotification());
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: ConstColors.buttonColor,
+                    ),
+                    width: Get.width,
+                    height: 55,
+                    child: const Center(
+                      child: Text(
+                        'Complete Profile',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
                   ),
