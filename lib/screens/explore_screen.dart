@@ -215,7 +215,7 @@ class Explore extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.only(right: 16),
                           child: SizedBox(
-                            height: Get.height / 3 - 8,
+                            height: Get.height / 3,
                             child: ListView.separated(
                               itemBuilder: (context, index) {
                                 return Container(
@@ -317,7 +317,7 @@ class Explore extends StatelessWidget {
                         height: 20,
                       ),
                       SizedBox(
-                        height: Get.height - 290,
+                        height: Get.height / 1.55,
                         child: ListView.separated(
                           itemBuilder: (context, index) {
                             return Container(
@@ -396,6 +396,7 @@ class Explore extends StatelessWidget {
                                     color: Colors.white70,
                                     size: 25,
                                   ),
+                                  const SizedBox(width: 8),
                                 ],
                               ),
                             );
@@ -415,13 +416,12 @@ class Explore extends StatelessWidget {
                         height: 20,
                       ),
                       SizedBox(
-                        height: Get.height - 300,
+                        height: Get.height / 1.55,
                         child: GridView.builder(
                           gridDelegate:
-                              const SliverGridDelegateWithFixedCrossAxisCount(
+                              SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 3,
-                            mainAxisSpacing: 100,
-                            crossAxisSpacing: 0,
+                            mainAxisExtent: Get.height / 5.5,
                           ),
                           itemBuilder: (context, index) {
                             return Padding(
@@ -462,21 +462,21 @@ class Explore extends StatelessWidget {
                         height: 20,
                       ),
                       SizedBox(
-                        height: Get.height - 300,
+                        height: Get.height / 1.5,
                         child: GridView.builder(
+                          itemCount: 20,
                           gridDelegate:
-                              const SliverGridDelegateWithFixedCrossAxisCount(
+                              SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 2,
-                            mainAxisSpacing: 70,
-                            crossAxisSpacing: 5,
+                            mainAxisExtent: Get.height / 3,
                           ),
                           itemBuilder: (context, index) {
                             return Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Container(
-                                  width: Get.width / 2.3,
-                                  height: Get.width / 2.3,
+                                  width: Get.width / 2.25,
+                                  height: Get.width / 2.25,
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(20),
                                     color: ConstColors.itemColor,
@@ -485,7 +485,7 @@ class Explore extends StatelessWidget {
                                     child: Icon(
                                       Icons.play_circle_fill_outlined,
                                       color: ConstColors.buttonColor,
-                                      size: 30,
+                                      size: 40,
                                     ),
                                   ),
                                 ),
@@ -541,7 +541,7 @@ class Explore extends StatelessWidget {
                         height: 20,
                       ),
                       SizedBox(
-                        height: Get.height - 293,
+                        height: Get.height / 1.55,
                         child: ListView.separated(
                           itemBuilder: (context, index) {
                             return Container(

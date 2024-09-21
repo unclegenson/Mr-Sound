@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import 'package:mr_sound_2/controllers/bubble_controller.dart';
 import 'package:mr_sound_2/controllers/each_music_controller.dart';
 import 'package:mr_sound_2/controllers/expand_container_controller.dart';
+import 'package:mr_sound_2/controllers/follow_controller.dart';
 import 'package:mr_sound_2/controllers/help_bubble.dart';
 import 'package:mr_sound_2/controllers/music_player_page.dart';
 import 'package:mr_sound_2/controllers/nav_controller.dart';
@@ -21,5 +22,6 @@ class MyBindings extends Bindings {
     Get.put(HelpBubbleController());
     Get.put(ExpandContainerController());
     Get.lazyPut(() => SplashController());
+    Get.put(FollowController());
   }
 }

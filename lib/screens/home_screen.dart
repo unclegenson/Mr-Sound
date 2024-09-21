@@ -54,7 +54,7 @@ class HomeScreen extends StatelessWidget {
         padding: const EdgeInsets.fromLTRB(16, 16, 0, 0),
         child: SingleChildScrollView(
           child: SizedBox(
-            height: Get.height * 2.1,
+            height: Get.height * 2,
             child: Column(
               children: [
                 Padding(
@@ -507,7 +507,7 @@ class HomeScreen extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(right: 16),
                   child: SizedBox(
-                    height: Get.height * 6 / 10,
+                    height: Get.height / 2.2,
                     width: Get.width,
                     child: GridView.builder(
                       itemCount: categories.length,
@@ -525,7 +525,7 @@ class HomeScreen extends StatelessWidget {
                                 height: Get.height / 4,
                                 width: Get.width / 2 - 20,
                                 decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20),
+                                  borderRadius: BorderRadius.circular(15),
                                   color: ConstColors.buttonColor,
                                 ),
                                 child: Center(
