@@ -67,7 +67,7 @@ class _SplashScreensState extends State<SplashScreens> {
               ],
             ),
             const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+              padding: EdgeInsets.symmetric(horizontal: 36, vertical: 8),
               child: Text(
                 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
                 style: TextStyle(
@@ -78,97 +78,111 @@ class _SplashScreensState extends State<SplashScreens> {
                 textAlign: TextAlign.center,
               ),
             ),
-            Obx(
-              () => Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Get.find<SplashController>().activePage.value != 0
-                      ? Container(
-                          margin: const EdgeInsets.only(left: 20),
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: ConstColors.buttonColor,
-                          ),
-                          child: IconButton(
-                            onPressed: () {
-                              if (Get.find<SplashController>()
-                                      .activePage
-                                      .value >
-                                  0) {
-                                Get.find<SplashController>().activePage.value -=
-                                    1;
-                                _pageController.animateToPage(
-                                  Get.find<SplashController>().activePage.value,
-                                  duration: const Duration(milliseconds: 300),
-                                  curve: Curves.ease,
-                                );
-                              }
-                            },
-                            icon: Icon(
-                              Icons.keyboard_arrow_left_outlined,
-                              color: ConstColors.backgroundColor,
-                              size: 30,
-                            ),
-                          ),
-                        )
-                      : const SizedBox(
-                          width: 48, //todo: change this 48
-                        ),
-                  SizedBox(
-                    width: 40,
-                    height: 40,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: 3,
-                      itemBuilder: (context, index) {
-                        return Padding(
-                          padding: const EdgeInsets.all(2),
-                          child: Obx(
-                            () => Container(
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Obx(
+                () => Stack(
+                  alignment: Alignment.centerRight,
+                  children: [
+                    Get.find<SplashController>().activePage.value != 0
+                        ? Align(
+                            alignment: Alignment.centerLeft,
+                            child: Container(
+                              margin: const EdgeInsets.only(left: 20),
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
-                                color: Get.find<SplashController>()
-                                            .activePage
-                                            .value ==
-                                        index
-                                    ? ConstColors.buttonColor
-                                    : Colors.white,
+                                color: ConstColors.buttonColor,
                               ),
-                              width: 10,
-                              height: 10,
+                              child: IconButton(
+                                onPressed: () {
+                                  if (Get.find<SplashController>()
+                                          .activePage
+                                          .value >
+                                      0) {
+                                    Get.find<SplashController>()
+                                        .activePage
+                                        .value -= 1;
+                                    _pageController.animateToPage(
+                                      Get.find<SplashController>()
+                                          .activePage
+                                          .value,
+                                      duration:
+                                          const Duration(milliseconds: 300),
+                                      curve: Curves.ease,
+                                    );
+                                  }
+                                },
+                                icon: Icon(
+                                  Icons.keyboard_arrow_left_outlined,
+                                  color: ConstColors.backgroundColor,
+                                  size: 30,
+                                ),
+                              ),
                             ),
+                          )
+                        : const SizedBox(),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          width: 40,
+                          height: 40,
+                          child: ListView.builder(
+                            scrollDirection: Axis.horizontal,
+                            itemCount: 3,
+                            itemBuilder: (context, index) {
+                              return Padding(
+                                padding: const EdgeInsets.all(2),
+                                child: Obx(
+                                  () => Container(
+                                    decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: Get.find<SplashController>()
+                                                  .activePage
+                                                  .value ==
+                                              index
+                                          ? ConstColors.buttonColor
+                                          : Colors.white,
+                                    ),
+                                    width: 10,
+                                    height: 10,
+                                  ),
+                                ),
+                              );
+                            },
                           ),
-                        );
-                      },
+                        ),
+                      ],
                     ),
-                  ),
-                  Container(
-                    margin: const EdgeInsets.only(right: 20),
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: ConstColors.buttonColor,
-                    ),
-                    child: IconButton(
-                      onPressed: () {
-                        if (Get.find<SplashController>().activePage.value < 2) {
-                          Get.find<SplashController>().activePage.value += 1;
-                          _pageController.animateToPage(
-                            Get.find<SplashController>().activePage.value,
-                            duration: const Duration(milliseconds: 300),
-                            curve: Curves.ease,
-                          );
-                        } else {
-                          Get.to(() => const CreateAccount());
-                        }
-                      },
-                      icon: Icon(
-                        Icons.keyboard_arrow_right_outlined,
-                        color: ConstColors.backgroundColor,
-                        size: 30,
+                    Container(
+                      margin: const EdgeInsets.only(right: 20),
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: ConstColors.buttonColor,
                       ),
-                    ),
-                  )
-                ],
+                      child: IconButton(
+                        onPressed: () {
+                          if (Get.find<SplashController>().activePage.value <
+                              2) {
+                            Get.find<SplashController>().activePage.value += 1;
+                            _pageController.animateToPage(
+                              Get.find<SplashController>().activePage.value,
+                              duration: const Duration(milliseconds: 300),
+                              curve: Curves.ease,
+                            );
+                          } else {
+                            Get.to(() => const CreateAccount());
+                          }
+                        },
+                        icon: Icon(
+                          Icons.keyboard_arrow_right_outlined,
+                          color: ConstColors.backgroundColor,
+                          size: 30,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
               ),
             )
           ],

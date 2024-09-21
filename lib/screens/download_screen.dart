@@ -14,22 +14,15 @@ class Download extends StatelessWidget {
         padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
         child: Column(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                GestureDetector(
-                  onTap: Get.back,
-                  child: const Icon(
-                    Icons.arrow_back_ios_rounded,
-                    color: Colors.white,
+                Padding(
+                  padding: EdgeInsets.only(left: 8),
+                  child: Text(
+                    'Downloads',
+                    style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
-                ),
-                const Text(
-                  'Downloads',
-                  style: TextStyle(color: Colors.white, fontSize: 20),
-                ),
-                const SizedBox(
-                  width: 20,
                 ),
               ],
             ),

@@ -35,27 +35,20 @@ class ProfileScreen extends StatelessWidget {
         padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
         child: Column(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                GestureDetector(
-                  onTap: Get.back,
-                  child: const Icon(
-                    Icons.arrow_back_ios_rounded,
-                    color: Colors.white,
+                Padding(
+                  padding: EdgeInsets.only(left: 8),
+                  child: Text(
+                    'Profile',
+                    style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
                 ),
-                const Text(
-                  'Profile',
-                  style: TextStyle(color: Colors.white, fontSize: 20),
-                ),
-                const SizedBox(
-                  width: 30,
-                )
               ],
             ),
             const SizedBox(
-              height: 18,
+              height: 8,
             ),
             Stack(
               alignment: Alignment.bottomRight,
@@ -108,7 +101,7 @@ class ProfileScreen extends StatelessWidget {
                 width: Get.width,
                 height: 80,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(15),
                   color: ConstColors.buttonColor,
                 ),
                 child: Row(
@@ -141,10 +134,10 @@ class ProfileScreen extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          'Lorem Ipsum ...',
+                          'Choose your premium plan now!',
                           style: TextStyle(
                             color: Colors.white70,
-                            fontSize: 18,
+                            fontSize: 16,
                             fontWeight: FontWeight.w400,
                           ),
                         ),

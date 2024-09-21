@@ -2,6 +2,7 @@ import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mr_sound_2/constant/constants.dart';
+import 'package:mr_sound_2/screens/nav_screen.dart';
 
 List categoryItems = ['Male', 'Female'];
 
@@ -15,7 +16,7 @@ class ChangeProfile extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         child: GestureDetector(
           onTap: () {
-            Get.back();
+            Get.offAll(() => const NavScreen());
             Get.snackbar(
               'Successfull',
               'Your Info changed successfully!',
@@ -34,16 +35,16 @@ class ChangeProfile extends StatelessWidget {
             width: Get.width / 2.3,
             height: 50,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30),
+              borderRadius: BorderRadius.circular(15),
               color: ConstColors.buttonColor,
             ),
-            child: const Center(
+            child: Center(
               child: Text(
-                'Create',
+                'Save',
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.w500,
-                  color: Colors.black,
+                  color: ConstColors.backgroundColor,
                 ),
               ),
             ),

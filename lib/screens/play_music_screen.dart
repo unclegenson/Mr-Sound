@@ -307,10 +307,10 @@ class _PlayTestState extends State<PlayTest> {
                       );
                     },
                     child: const Padding(
-                      padding: EdgeInsets.all(8.0),
+                      padding: EdgeInsets.only(right: 12),
                       child: Icon(
                         Icons.more_vert_rounded,
-                        size: 32,
+                        size: 25,
                         color: Colors.white,
                       ),
                     ),

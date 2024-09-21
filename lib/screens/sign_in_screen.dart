@@ -41,6 +41,9 @@ class SignIn extends StatelessWidget {
                   ),
                   textAlign: TextAlign.center,
                 ),
+                const SizedBox(
+                  height: 20,
+                ),
                 Column(
                   children: [
                     Row(
@@ -138,7 +141,7 @@ class SignIn extends StatelessWidget {
                       children: [
                         GestureDetector(
                           onTap: () {
-                            Get.to(() => const NewPassword());
+                            Get.offAll(() => const NewPassword());
                           },
                           child: Text(
                             'Forgot Password?',
@@ -161,29 +164,29 @@ class SignIn extends StatelessWidget {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Get.to(() => const CompleteProfile());
+                    Get.offAll(() => const CompleteProfile());
                   },
                   child: Container(
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(15),
                       color: ConstColors.buttonColor,
                     ),
                     width: Get.width,
                     height: 55,
-                    child: const Center(
+                    child: Center(
                       child: Text(
                         'Sign In',
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.w500,
-                          color: Colors.white,
+                          color: ConstColors.backgroundColor,
                         ),
                       ),
                     ),
                   ),
                 ),
                 const SizedBox(
-                  height: 40,
+                  height: 20,
                 ),
                 Row(
                   children: [
@@ -268,7 +271,7 @@ class SignIn extends StatelessWidget {
                     ),
                     GestureDetector(
                       onTap: () {
-                        Get.to(() => const CreateAccount());
+                        Get.offAll(() => const CreateAccount());
                       },
                       child: Text(
                         'Sign Up',

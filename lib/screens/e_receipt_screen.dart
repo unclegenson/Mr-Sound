@@ -45,20 +45,20 @@ class EReceipt extends StatelessWidget {
                 );
               },
             );
-            Get.to(() => const NavScreen());
+            Get.offAll(() => const NavScreen());
           },
           child: Container(
             width: Get.width,
-            height: 55,
+            height: 50,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               color: ConstColors.buttonColor,
             ),
-            child: const Center(
+            child: Center(
               child: Text(
                 'Download E-Receipt',
                 style: TextStyle(
-                  color: Colors.white,
+                  color: ConstColors.backgroundColor,
                   fontWeight: FontWeight.w500,
                   fontSize: 18,
                 ),
@@ -118,7 +118,7 @@ class EReceipt extends StatelessWidget {
                           ),
                           Text(
                             'Yearly', //todo: enable change
-                            style: TextStyle(color: Colors.white, fontSize: 17),
+                            style: TextStyle(color: Colors.white, fontSize: 15),
                           )
                         ],
                       ),
@@ -134,11 +134,11 @@ class EReceipt extends StatelessWidget {
                           Text(
                             'Purchase Date',
                             style:
-                                TextStyle(color: Colors.white70, fontSize: 17),
+                                TextStyle(color: Colors.white70, fontSize: 15),
                           ),
                           Text(
                             'December 24, 2023 | 10:00 AM', //todo: enable change
-                            style: TextStyle(color: Colors.white, fontSize: 17),
+                            style: TextStyle(color: Colors.white, fontSize: 15),
                           )
                         ],
                       ),
@@ -154,8 +154,8 @@ class EReceipt extends StatelessWidget {
                                 TextStyle(color: Colors.white70, fontSize: 17),
                           ),
                           Text(
-                            'December 24, 2023 | 10:00 AM', //todo: enable change
-                            style: TextStyle(color: Colors.white, fontSize: 17),
+                            'December 24, 2024 | 10:00 AM', //todo: enable change
+                            style: TextStyle(color: Colors.white, fontSize: 15),
                           )
                         ],
                       ),
@@ -175,7 +175,7 @@ class EReceipt extends StatelessWidget {
                           ),
                           Text(
                             '99.99\$', //todo: enable change
-                            style: TextStyle(color: Colors.white, fontSize: 17),
+                            style: TextStyle(color: Colors.white, fontSize: 15),
                           )
                         ],
                       ),
@@ -192,7 +192,7 @@ class EReceipt extends StatelessWidget {
                           ),
                           Text(
                             '10.00\$', //todo: enable change
-                            style: TextStyle(color: Colors.white, fontSize: 17),
+                            style: TextStyle(color: Colors.white, fontSize: 15),
                           )
                         ],
                       ),
@@ -212,7 +212,7 @@ class EReceipt extends StatelessWidget {
                           ),
                           Text(
                             '109.00\$', //todo: enable change
-                            style: TextStyle(color: Colors.white, fontSize: 17),
+                            style: TextStyle(color: Colors.white, fontSize: 15),
                           )
                         ],
                       ),
@@ -232,7 +232,7 @@ class EReceipt extends StatelessWidget {
                           ),
                           Text(
                             'Mohammad Mahdi', //todo: enable change
-                            style: TextStyle(color: Colors.white, fontSize: 17),
+                            style: TextStyle(color: Colors.white, fontSize: 15),
                           )
                         ],
                       ),
@@ -249,7 +249,7 @@ class EReceipt extends StatelessWidget {
                           ),
                           Text(
                             '+98 910 063 9128', //todo: enable change
-                            style: TextStyle(color: Colors.white, fontSize: 17),
+                            style: TextStyle(color: Colors.white, fontSize: 15),
                           )
                         ],
                       ),
@@ -266,7 +266,7 @@ class EReceipt extends StatelessWidget {
                           ),
                           Text(
                             'Paypal', //todo: enable change
-                            style: TextStyle(color: Colors.white, fontSize: 17),
+                            style: TextStyle(color: Colors.white, fontSize: 15),
                           )
                         ],
                       ),
@@ -283,7 +283,7 @@ class EReceipt extends StatelessWidget {
                           ),
                           Text(
                             '#RE2564HG23', //todo: enable change
-                            style: TextStyle(color: Colors.white, fontSize: 17),
+                            style: TextStyle(color: Colors.white, fontSize: 15),
                           )
                         ],
                       ),

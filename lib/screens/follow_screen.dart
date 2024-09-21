@@ -56,7 +56,7 @@ class _FollowState extends State<Follow> {
                 child: ListView.separated(
                   itemBuilder: (context, index) {
                     return Container(
-                      height: 80,
+                      height: Get.height / 14,
                       width: Get.width,
                       decoration: BoxDecoration(
                         color: ConstColors.backgroundColor,
@@ -65,8 +65,8 @@ class _FollowState extends State<Follow> {
                       child: Row(
                         children: [
                           Container(
-                            height: Get.height / 5,
-                            width: Get.width / 5,
+                            height: Get.height / 7,
+                            width: Get.width / 7,
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
                               color: ConstColors.buttonColor,
@@ -78,8 +78,8 @@ class _FollowState extends State<Follow> {
                           const Text(
                             'Behnam Bani',
                             style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.w500,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w400,
                               color: Colors.white,
                             ),
                           ),

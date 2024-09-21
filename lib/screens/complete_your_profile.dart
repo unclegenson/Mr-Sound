@@ -21,17 +21,8 @@ class CompleteProfile extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    GestureDetector(
-                      onTap: Get.back,
-                      child: const Icon(
-                        Icons.arrow_back_ios_rounded,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ],
+                const SizedBox(
+                  height: 20,
                 ),
                 const Text(
                   'Complete Your Profile',
@@ -58,14 +49,14 @@ class CompleteProfile extends StatelessWidget {
                       Container(
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: ConstColors.itemColor,
+                          color: ConstColors.buttonColor,
                         ),
                         width: Get.width / 3,
                         height: Get.width / 3,
                         child: Icon(
                           Icons.person,
-                          size: Get.width / 5,
-                          color: ConstColors.buttonColor,
+                          size: Get.width / 4,
+                          color: Colors.white,
                         ),
                       ),
                       Container(
@@ -252,18 +243,18 @@ class CompleteProfile extends StatelessWidget {
                   },
                   child: Container(
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(15),
                       color: ConstColors.buttonColor,
                     ),
                     width: Get.width,
                     height: 55,
-                    child: const Center(
+                    child: Center(
                       child: Text(
                         'Complete Profile',
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.w500,
-                          color: Colors.white,
+                          color: ConstColors.backgroundColor,
                         ),
                       ),
                     ),

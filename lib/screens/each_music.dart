@@ -34,7 +34,7 @@ class Music extends StatelessWidget {
                             Get.back();
                           },
                           child: const Icon(
-                            Icons.arrow_back_ios,
+                            Icons.arrow_back_ios_new_rounded,
                             color: Colors.white,
                           ),
                         ),
@@ -208,7 +208,7 @@ class Music extends StatelessWidget {
                             color: Colors.white,
                             width: 1,
                           ),
-                          borderRadius: BorderRadius.circular(20),
+                          borderRadius: BorderRadius.circular(15),
                           color: Colors.white10,
                         ),
                         child: const Padding(
@@ -243,7 +243,7 @@ class Music extends StatelessWidget {
                                       size: 25,
                                     ),
                                     Text(
-                                      '3.868',
+                                      '12.209',
                                       style: TextStyle(
                                           color: Colors.white, fontSize: 12),
                                     )
@@ -261,7 +261,7 @@ class Music extends StatelessWidget {
                                       size: 25,
                                     ),
                                     Text(
-                                      '3.868',
+                                      '4.912',
                                       style: TextStyle(
                                           color: Colors.white, fontSize: 12),
                                     )
@@ -279,7 +279,7 @@ class Music extends StatelessWidget {
                                       size: 25,
                                     ),
                                     Text(
-                                      '3.868',
+                                      '1.091',
                                       style: TextStyle(
                                           color: Colors.white, fontSize: 12),
                                     )

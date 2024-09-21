@@ -19,22 +19,15 @@ class Explore extends StatelessWidget {
           () => SingleChildScrollView(
             child: Column(
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                const Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    GestureDetector(
-                      onTap: Get.back,
-                      child: const Icon(
-                        Icons.arrow_back_ios_rounded,
-                        color: Colors.white,
+                    Padding(
+                      padding: EdgeInsets.only(left: 8),
+                      child: Text(
+                        'Explore',
+                        style: TextStyle(color: Colors.white, fontSize: 20),
                       ),
-                    ),
-                    const Text(
-                      'Explore',
-                      style: TextStyle(color: Colors.white, fontSize: 20),
-                    ),
-                    const SizedBox(
-                      width: 20,
                     ),
                   ],
                 ),
@@ -46,7 +39,7 @@ class Explore extends StatelessWidget {
                   child: Container(
                     decoration: BoxDecoration(
                       color: ConstColors.itemColor,
-                      borderRadius: BorderRadius.circular(20),
+                      borderRadius: BorderRadius.circular(15),
                     ),
                     width: Get.width,
                     height: 60,

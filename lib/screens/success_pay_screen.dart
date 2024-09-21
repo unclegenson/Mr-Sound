@@ -12,7 +12,7 @@ class SuccessPay extends StatelessWidget {
     return Scaffold(
       backgroundColor: ConstColors.backgroundColor,
       bottomNavigationBar: SizedBox(
-        height: 150,
+        height: 140,
         width: Get.width,
         child: Column(
           children: [
@@ -24,17 +24,17 @@ class SuccessPay extends StatelessWidget {
                 },
                 child: Container(
                   width: Get.width,
-                  height: 55,
+                  height: 50,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
                     color: ConstColors.buttonColor,
                   ),
-                  child: const Center(
+                  child: Center(
                     child: Text(
                       'View E-Receipt',
                       style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.white,
+                        fontSize: 18,
+                        color: ConstColors.backgroundColor,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
@@ -50,7 +50,7 @@ class SuccessPay extends StatelessWidget {
                 },
                 child: Container(
                   width: Get.width,
-                  height: 55,
+                  height: 50,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
                     color: ConstColors.backgroundColor,
@@ -59,7 +59,7 @@ class SuccessPay extends StatelessWidget {
                     child: Text(
                       'Go to Home',
                       style: TextStyle(
-                        fontSize: 20,
+                        fontSize: 18,
                         color: Colors.white,
                         fontWeight: FontWeight.w500,
                       ),
@@ -101,6 +101,9 @@ class SuccessPay extends StatelessWidget {
                         size: 100,
                         color: Colors.white,
                       ),
+                      SizedBox(
+                        height: 8,
+                      ),
                       Text(
                         'Congratulations!',
                         style: TextStyle(
@@ -115,7 +118,7 @@ class SuccessPay extends StatelessWidget {
                       Text(
                         'You have successfully subscribed yearly plan.',
                         style: TextStyle(
-                          fontSize: 16,
+                          fontSize: 14,
                           color: Colors.white70,
                           fontWeight: FontWeight.w400,
                         ),
@@ -123,7 +126,7 @@ class SuccessPay extends StatelessWidget {
                       Text(
                         'You can download your E-Receipt Now.',
                         style: TextStyle(
-                          fontSize: 16,
+                          fontSize: 14,
                           color: Colors.white70,
                           fontWeight: FontWeight.w400,
                         ),

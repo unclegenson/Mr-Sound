@@ -31,28 +31,24 @@ class PlayList extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  GestureDetector(
-                    onTap: Get.back,
-                    child: const Icon(
-                      Icons.arrow_back_ios_rounded,
-                      color: Colors.white,
+                  const Padding(
+                    padding: EdgeInsets.only(left: 8),
+                    child: Text(
+                      'Playlists',
+                      style: TextStyle(color: Colors.white, fontSize: 20),
                     ),
-                  ),
-                  const Text(
-                    'Playlists',
-                    style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
                   Obx(
                     () => GestureDetector(
                       onTap: _toggleSearch,
                       child: AnimatedContainer(
-                        duration: const Duration(milliseconds: 300),
+                        duration: const Duration(milliseconds: 150),
                         width: Get.find<ShowEndWidget_SearchBar_Controller>()
                                 .isSearchActive
                                 .value
-                            ? 200
+                            ? Get.width * 2 / 3
                             : 40,
-                        height: 40,
+                        height: 30,
                         decoration: BoxDecoration(
                           color: Colors.transparent,
                           borderRadius: BorderRadius.circular(50),
@@ -68,8 +64,11 @@ class PlayList extends StatelessWidget {
                                           .value
                                       ? 10
                                       : 0),
-                              child:
-                                  const Icon(Icons.search, color: Colors.white),
+                              child: const Icon(
+                                Icons.search,
+                                color: Colors.white,
+                                size: 25,
+                              ),
                             ),
                             Get.find<ShowEndWidget_SearchBar_Controller>()
                                     .isSearchActive

@@ -52,4 +52,6 @@ class _MyAppState extends State<MyApp> {
 
 //todo: Create Notifications screen
 //todo: Create Settings screen
+//todo: press back button again to close the app
+//todo: clippath to splash screens
  

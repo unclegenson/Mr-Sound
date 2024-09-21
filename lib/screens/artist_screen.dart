@@ -33,19 +33,22 @@ class ArtistScreen extends StatelessWidget {
                         child: const Icon(
                           Icons.share,
                           color: Colors.white,
-                          size: 28,
+                          size: 25,
                         ),
                       ),
                       const SizedBox(
-                        width: 10,
+                        width: 15,
                       ),
                       GestureDetector(
                         child: const Icon(
                           Icons.favorite_border,
                           color: Colors.white,
-                          size: 28,
+                          size: 25,
                         ),
                       ),
+                      const SizedBox(
+                        width: 5,
+                      )
                     ],
                   ),
                 ),

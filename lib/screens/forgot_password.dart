@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:mr_sound_2/constant/constants.dart';
+import 'package:mr_sound_2/screens/sign_in_screen.dart';
 
 class NewPassword extends StatelessWidget {
   const NewPassword({super.key});
@@ -28,6 +30,9 @@ class NewPassword extends StatelessWidget {
                     ),
                   ],
                 ),
+                SizedBox(
+                  height: Get.height / 10,
+                ),
                 const Text(
                   'New Password',
                   style: TextStyle(
@@ -35,6 +40,9 @@ class NewPassword extends StatelessWidget {
                     color: Colors.white,
                     fontWeight: FontWeight.w500,
                   ),
+                ),
+                const SizedBox(
+                  height: 10,
                 ),
                 const Text(
                   'Your new password must be different\nfrom previously used passwords.',
@@ -44,6 +52,9 @@ class NewPassword extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                   ),
                   textAlign: TextAlign.center,
+                ),
+                const SizedBox(
+                  height: 40,
                 ),
                 Column(
                   children: [
@@ -147,28 +158,33 @@ class NewPassword extends StatelessWidget {
                       ],
                     ),
                     const SizedBox(
-                      height: 30,
+                      height: 50,
                     ),
-                    Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: ConstColors.buttonColor,
-                      ),
-                      width: Get.width,
-                      height: 55,
-                      child: const Center(
-                        child: Text(
-                          'Create New Password',
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.white,
+                    GestureDetector(
+                      onTap: () {
+                        Get.offAll(() => const SignIn());
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                          color: ConstColors.buttonColor,
+                        ),
+                        width: Get.width,
+                        height: 50,
+                        child: Center(
+                          child: Text(
+                            'Create New Password',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w500,
+                              color: ConstColors.backgroundColor,
+                            ),
                           ),
                         ),
                       ),
                     ),
                     SizedBox(
-                      height: Get.height / 2,
+                      height: Get.height / 4,
                     ),
                   ],
                 ),

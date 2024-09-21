@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mr_sound_2/constant/constants.dart';
+import 'package:mr_sound_2/controllers/nav_controller.dart';
 import 'package:mr_sound_2/controllers/show_end_widget_controller.dart';
 import 'package:mr_sound_2/screens/artist_screen.dart';
 import 'package:mr_sound_2/screens/choose_your_plan.dart';
@@ -12,7 +13,7 @@ List categories = [
   'Hip hop music',
   'Rock music',
   'Rhythm and blues',
-  'Guran',
+  'Quran',
   'Soul music',
   'Reggae music',
   'Country music',
@@ -62,10 +63,15 @@ class HomeScreen extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const Icon(
-                        Icons.circle,
-                        color: Colors.white,
-                        size: 40,
+                      GestureDetector(
+                        onTap: () {
+                          Get.find<NavController>().currentScreen.value = 4;
+                        },
+                        child: const Icon(
+                          Icons.circle,
+                          color: Colors.white,
+                          size: 40,
+                        ),
                       ),
                       const Text(
                         'Home',
@@ -75,14 +81,14 @@ class HomeScreen extends StatelessWidget {
                         () => GestureDetector(
                           onTap: _toggleSearch,
                           child: AnimatedContainer(
-                            duration: const Duration(milliseconds: 300),
+                            duration: const Duration(milliseconds: 150),
                             width:
                                 Get.find<ShowEndWidget_SearchBar_Controller>()
                                         .isSearchActive
                                         .value
                                     ? 200
                                     : 40,
-                            height: 40,
+                            height: 30,
                             decoration: BoxDecoration(
                               color: Colors.transparent,
                               borderRadius: BorderRadius.circular(50),
@@ -101,7 +107,7 @@ class HomeScreen extends StatelessWidget {
                                   child: const Icon(
                                     Icons.search,
                                     color: Colors.white,
-                                    size: 30,
+                                    size: 25,
                                   ),
                                 ),
                                 Get.find<ShowEndWidget_SearchBar_Controller>()
@@ -181,13 +187,13 @@ class HomeScreen extends StatelessWidget {
                           ),
                           const Spacer(),
                           SizedBox(
-                            width: 135,
-                            height: 45,
+                            width: 140,
+                            height: 50,
                             child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: ConstColors.buttonColor,
                                 shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10),
+                                  borderRadius: BorderRadius.circular(15),
                                 ),
                               ),
                               onPressed: () {
@@ -196,8 +202,9 @@ class HomeScreen extends StatelessWidget {
                               child: Text(
                                 'Try For Free',
                                 style: TextStyle(
-                                    color: ConstColors.backgroundColor,
-                                    fontSize: 17),
+                                  color: ConstColors.backgroundColor,
+                                  fontSize: 18,
+                                ),
                               ),
                             ),
                           ),
@@ -531,9 +538,9 @@ class HomeScreen extends StatelessWidget {
                                 child: Center(
                                   child: Text(
                                     categories[index],
-                                    style: const TextStyle(
+                                    style: TextStyle(
                                       fontSize: 18,
-                                      color: Colors.white,
+                                      color: ConstColors.backgroundColor,
                                       fontWeight: FontWeight.w400,
                                     ),
                                   ),
@@ -541,9 +548,9 @@ class HomeScreen extends StatelessWidget {
                               ),
                               IconButton(
                                 onPressed: () {},
-                                icon: const Icon(
+                                icon: Icon(
                                   Icons.favorite_border,
-                                  color: Colors.white,
+                                  color: ConstColors.backgroundColor,
                                 ),
                               )
                             ],

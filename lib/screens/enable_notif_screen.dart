@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:mr_sound_2/constant/constants.dart';
-import 'package:mr_sound_2/screens/nav_screen.dart';
 import 'package:mr_sound_2/screens/verify_code_screen.dart';
 
 class EnableNotification extends StatelessWidget {
@@ -50,13 +48,16 @@ class EnableNotification extends StatelessWidget {
                 color: Colors.white,
               ),
             ),
+            const SizedBox(
+              height: 10,
+            ),
             GestureDetector(
               onTap: () {
-                Get.to(const VerifyCode());
+                Get.offAll(const VerifyCode());
               },
               child: Container(
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(40),
+                  borderRadius: BorderRadius.circular(15),
                   color: ConstColors.buttonColor,
                 ),
                 width: Get.width - 40,
@@ -74,7 +75,9 @@ class EnableNotification extends StatelessWidget {
               ),
             ),
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                Get.offAll(() => const VerifyCode());
+              },
               child: Text(
                 'Maybe Later',
                 style: TextStyle(

@@ -79,18 +79,6 @@ class _VerifyCodeState extends State<VerifyCode> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      GestureDetector(
-                        onTap: Get.back,
-                        child: const Icon(
-                          Icons.arrow_back_ios_rounded,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ],
-                  ),
                   const SizedBox(
                     height: 20,
                   ),
@@ -101,6 +89,9 @@ class _VerifyCodeState extends State<VerifyCode> {
                       color: Colors.white,
                       fontWeight: FontWeight.w500,
                     ),
+                  ),
+                  const SizedBox(
+                    height: 10,
                   ),
                   const Text(
                     'Please enter the code we just sent to email\nexample@gmail.com',
@@ -158,30 +149,33 @@ class _VerifyCodeState extends State<VerifyCode> {
                   const SizedBox(
                     height: 20,
                   ),
-                  GestureDetector(
-                    onTap: () {
-                      Get.to(() => const NavScreen());
-                    },
-                    child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: ConstColors.buttonColor,
-                      ),
-                      width: Get.width,
-                      height: 55,
-                      child: const Center(
-                        child: Text(
-                          'Verify',
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.white,
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    child: GestureDetector(
+                      onTap: () {
+                        Get.offAll(() => const NavScreen());
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: ConstColors.buttonColor,
+                        ),
+                        width: Get.width,
+                        height: 50,
+                        child: Center(
+                          child: Text(
+                            'Verify',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w500,
+                              color: ConstColors.backgroundColor,
+                            ),
                           ),
                         ),
                       ),
                     ),
                   ),
-                  SizedBox(height: Get.height / 2.1)
+                  SizedBox(height: Get.height / 5)
                 ],
               ),
             ),

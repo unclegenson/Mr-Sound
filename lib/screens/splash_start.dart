@@ -77,22 +77,29 @@ class SplashStartScreen extends StatelessWidget {
                 ),
                 child: GestureDetector(
                   onTap: () {
-                    Get.to(() => const SplashScreens());
+                    Get.offAll(() => const SplashScreens());
                   },
-                  child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: ConstColors.buttonColor,
+                  child: Card(
+                    elevation: 5,
+                    shape: BeveledRectangleBorder(
+                      borderRadius: BorderRadius.circular(15),
                     ),
-                    width: Get.width,
-                    height: 50,
-                    child: Center(
-                      child: Text(
-                        "Let's Get Started",
-                        style: TextStyle(
-                          fontSize: 18,
-                          color: ConstColors.backgroundColor,
-                          fontWeight: FontWeight.w500,
+                    shadowColor: ConstColors.buttonColor,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        color: ConstColors.buttonColor,
+                      ),
+                      width: Get.width,
+                      height: 50,
+                      child: Center(
+                        child: Text(
+                          "Let's Get Started",
+                          style: TextStyle(
+                            fontSize: 18,
+                            color: ConstColors.backgroundColor,
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
                       ),
                     ),

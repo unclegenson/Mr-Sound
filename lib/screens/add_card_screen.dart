@@ -35,7 +35,7 @@ class MySampleState extends State<MySample> {
         child: GestureDetector(
           onTap: _onValidate,
           child: Container(
-            height: 60,
+            height: 50,
             width: Get.width,
             margin: const EdgeInsets.symmetric(
               horizontal: 16,
@@ -44,17 +44,17 @@ class MySampleState extends State<MySample> {
             decoration: BoxDecoration(
               color: ConstColors.buttonColor,
               borderRadius: const BorderRadius.all(
-                Radius.circular(10),
+                Radius.circular(15),
               ),
             ),
-            padding: const EdgeInsets.symmetric(vertical: 15),
-            alignment: Alignment.center,
-            child: const Text(
-              'Add Card',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 18,
-                fontWeight: FontWeight.w500,
+            child: Center(
+              child: Text(
+                'Add Card',
+                style: TextStyle(
+                  color: ConstColors.backgroundColor,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w500,
+                ),
               ),
             ),
           ),

@@ -32,6 +32,9 @@ class CreateAccount extends StatelessWidget {
                     fontWeight: FontWeight.w500,
                   ),
                 ),
+                const SizedBox(
+                  height: 20,
+                ),
                 const Text(
                   'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
                   style: TextStyle(
@@ -40,6 +43,9 @@ class CreateAccount extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                   ),
                   textAlign: TextAlign.center,
+                ),
+                const SizedBox(
+                  height: 20,
                 ),
                 Column(
                   children: [
@@ -205,34 +211,31 @@ class CreateAccount extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(
-                  height: 10,
-                ),
                 GestureDetector(
                   onTap: () {
-                    Get.to(() => const CompleteProfile());
+                    Get.offAll(() => const CompleteProfile());
                   },
                   child: Container(
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(15),
                       color: ConstColors.buttonColor,
                     ),
                     width: Get.width,
-                    height: 55,
-                    child: const Center(
+                    height: 50,
+                    child: Center(
                       child: Text(
                         'Sign Up',
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.w500,
-                          color: Colors.white,
+                          color: ConstColors.backgroundColor,
                         ),
                       ),
                     ),
                   ),
                 ),
                 const SizedBox(
-                  height: 40,
+                  height: 10,
                 ),
                 Row(
                   children: [
@@ -317,7 +320,7 @@ class CreateAccount extends StatelessWidget {
                     ),
                     GestureDetector(
                       onTap: () {
-                        Get.to(() => const SignIn());
+                        Get.offAll(() => const SignIn());
                       },
                       child: Text(
                         'Sign In',
